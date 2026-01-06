@@ -54,34 +54,35 @@
     .topbar-inner{
       max-width:1100px;
       margin:0 auto;
-      padding:12px 18px;
+      padding:10px 18px;
       display:flex;
       justify-content:space-between;
       align-items:center;
       gap:14px;
+      min-height:74px;
     }
 
     .brand{
       display:flex;
       align-items:center;
-      gap:10px;
-      min-width: 240px;
+      gap:14px;
     }
 
+    /* logo 3× větší (z ~34px na ~102px) */
     .brand img{
-      width:34px;
-      height:34px;
+      width:102px;
+      height:102px;
       object-fit:contain;
-      border-radius:12px;
+      border-radius:22px;
       background:#f3f6f6;
-      padding:5px;
+      padding:10px;
       border:1px solid var(--border);
     }
 
     .brand-title{
       font-weight:900;
-      font-size:15px;
-      line-height:1.1;
+      font-size:16px;
+      line-height:1.15;
       color: var(--accent);
       letter-spacing:.2px;
     }
@@ -89,14 +90,14 @@
     .brand-sub{
       font-size:12px;
       color: var(--muted);
-      margin-top:2px;
+      margin-top:3px;
     }
 
     nav{
       display:flex;
       gap:14px;
       flex-wrap:wrap;
-      justify-content: flex-end;
+      justify-content:flex-end;
     }
 
     nav a{
@@ -104,13 +105,11 @@
       text-decoration:none;
       font-weight:800;
       font-size:13px;
-      padding:6px 10px;
+      padding:7px 12px;
       border-radius:999px;
     }
 
-    nav a:hover{
-      background:#f2f6f6;
-    }
+    nav a:hover{ background:#f2f6f6; }
 
     /* ===== HERO ===== */
     .hero{
@@ -119,7 +118,12 @@
         linear-gradient(180deg,rgba(0,0,0,.34),rgba(0,0,0,.14),rgba(255,255,255,0)),
         url("foto1.jpg");
       background-size:cover;
-      background-position:center 72%; /* posun dolů */
+
+      /* POSUN PRO OBLIČEJE – upravuj jemně dle potřeby:
+         - menší % = více nahoru
+         - větší % = více dolů
+      */
+      background-position:center 35%;
     }
 
     .hero-inner{
@@ -142,9 +146,7 @@
       letter-spacing:.2px;
       backdrop-filter: blur(6px);
     }
-    .dot{
-      width:8px;height:8px;border-radius:99px;background:rgba(255,255,255,.85);
-    }
+    .dot{ width:8px;height:8px;border-radius:99px;background:rgba(255,255,255,.85); }
 
     .hero h1{
       font-size:46px;
@@ -186,61 +188,42 @@
     .lead + .lead{ margin-top:12px; }
     .muted{ color:var(--muted); }
 
-    /* ===== GALLERY ===== */
+    /* ===== ONE GALLERY ===== */
     .gallery{
-      display:grid;
-      grid-template-columns:1fr;
-      gap:14px;
-    }
-
-    .gallery img{
-      width:100%;
-      height:auto;
-      border-radius:var(--radius);
-      border:1px solid var(--border);
-      box-shadow:var(--shadow);
-      background:#fff;
-    }
-
-    /* Momentky – stabilní grid + stejné výšky */
-    .mosaic{
-      margin-top:14px;
+      margin-top:10px;
       display:grid;
       gap:14px;
       grid-template-columns: repeat(2, 1fr);
     }
 
-    .mosaic figure{
+    .gallery figure{
       margin:0;
       border-radius: var(--radius);
       border:1px solid var(--border);
       overflow:hidden;
       background:#fff;
       box-shadow: var(--shadow);
-      aspect-ratio: 4 / 3;  /* drží vizuál */
-      position: relative;
+      aspect-ratio: 4 / 3;
     }
 
-    .mosaic img{
+    .gallery img{
       width:100%;
       height:100%;
-      object-fit: cover;     /* žádné „divné“ zobrazení */
+      object-fit: cover;
       display:block;
       transform: scale(1.01);
     }
 
-    /* jedna dominantní fotka uprostřed */
     @media(min-width:760px){
-      .gallery{ grid-template-columns:1fr 1fr; }
-      .mosaic{ grid-template-columns: repeat(4, 1fr); }
-      .mosaic figure:nth-child(4){
+      .gallery figure:nth-child(3){
         grid-column: span 2;
-        grid-row: span 2;
-        aspect-ratio: 16 / 10;
+        aspect-ratio: 16 / 9;
       }
-      .mosaic figure:nth-child(8){
-        grid-column: span 2;
-      }
+    }
+
+    @media(max-width:759px){
+      .gallery{ grid-template-columns: 1fr; }
+      .gallery figure{ aspect-ratio: 16 / 10; }
     }
 
     /* ===== YouTube ===== */
@@ -265,7 +248,6 @@
     }
 
     .yt-links a:hover{ background:#fbfdfd; }
-
     .yt-links svg{ width:20px;height:20px; flex:0 0 auto; }
 
     /* ===== CONTACT ===== */
@@ -342,7 +324,7 @@
       .hero h1{ font-size:36px; }
       .hero p{ font-size:16px; }
       nav a{ font-size:12px; }
-      .brand img{ width:30px; height:30px; }
+      .brand img{ width:78px; height:78px; padding:8px; } /* na mobilu menší */
     }
   </style>
 </head>
@@ -361,7 +343,7 @@
 
     <nav aria-label="Hlavní navigace">
       <a href="#o-souboru">O souboru</a>
-      <a href="#fotogalerie">Fotky</a>
+      <a href="#fotky">Fotky</a>
       <a href="#youtube">YouTube</a>
       <a href="#kontakt">Kontakt</a>
     </nav>
@@ -413,33 +395,23 @@
         a kultivaci vícehlasu tak, aby si zpěv zachoval původní charakter a zároveň fungoval na pódiu
         pro dnešní publikum.
       </p>
-
-      <p class="lead muted">
-        Pokud chcete Kupavu pozvat na akci v Brně nebo kdekoliv v ČR, napište nám – ozveme se rychle a věcně.
-      </p>
     </div>
   </section>
 
-  <section id="fotogalerie" aria-label="Fotogalerie" style="margin-top:26px;">
-    <h2>Fotogalerie</h2>
+  <section id="fotky" aria-label="Fotky" style="margin-top:26px;">
+    <h2>Fotky</h2>
+    <div class="card">
+      <p class="lead">Ukázky z našich vystoupení a krojů.</p>
 
-    <div class="gallery" aria-label="Hlavní fotografie">
-      <img src="foto1.jpg" alt="Kupava Brno – vystoupení (bannerová fotografie)">
-      <img src="foto2.jpg" alt="Kupava Brno – vystoupení v krojích">
-    </div>
-
-    <div class="card" style="margin-top:18px;" aria-label="Momentky z vystoupení">
-      <p class="lead"><strong>Momentky z vystoupení</strong></p>
-
-      <div class="mosaic">
-        <figure><img src="foto1.jpg" alt="Momentka 1 – vystoupení souboru Kupava"></figure>
-        <figure><img src="foto2.jpg" alt="Momentka 2 – tradiční kroje a vícehlas"></figure>
-        <figure><img src="foto3.jpg" alt="Momentka 3 – živá hudba a zpěv"></figure>
-        <figure><img src="foto4.jpg" alt="Momentka 4 – vystoupení na akci"></figure>
-        <figure><img src="foto5.jpg" alt="Momentka 5 – detail kroje (vyšyvanka)"></figure>
-        <figure><img src="foto6.jpg" alt="Momentka 6 – skupinová fotografie"></figure>
-        <figure><img src="foto7.jpg" alt="Momentka 7 – pódiová atmosféra"></figure>
-        <figure><img src="foto8.jpg" alt="Momentka 8 – festivalová energie"></figure>
+      <div class="gallery" aria-label="Galerie fotografií">
+        <figure><img src="foto2.jpg" alt="Kupava Brno – vystoupení v krojích"></figure>
+        <figure><img src="foto3.jpg" alt="Kupava Brno – vícehlasý zpěv"></figure>
+        <figure><img src="foto1.jpg" alt="Kupava Brno – společná fotografie a živá hudba"></figure>
+        <figure><img src="foto4.jpg" alt="Kupava Brno – vystoupení na akci"></figure>
+        <figure><img src="foto5.jpg" alt="Kupava Brno – detail kroje (vyšyvanka)"></figure>
+        <figure><img src="foto6.jpg" alt="Kupava Brno – skupina v tradičních krojích"></figure>
+        <figure><img src="foto7.jpg" alt="Kupava Brno – pódiová atmosféra"></figure>
+        <figure><img src="foto8.jpg" alt="Kupava Brno – festivalová energie"></figure>
       </div>
     </div>
   </section>
@@ -472,7 +444,9 @@
 
     <div class="card grid">
       <div>
+        <p class="contact-line"><strong>Ukrajinský folklorní soubor Kupava Brno</strong></p>
         <p class="contact-line">📧 <a href="mailto:kupava@kupavabrno.cz">kupava@kupavabrno.cz</a></p>
+        <p class="contact-line">📞 <a href="tel:+420777072433">+420 777 072 433</a></p>
         <p class="contact-line">📍 Brno</p>
 
         <a class="btn" href="mailto:kupava@kupavabrno.cz?subject=Zpr%C3%A1va%20z%20webu%20Kupava%20Brno&body=Dobr%C3%BD%20den%2C%0A%0A" aria-label="Napsat e-mail souboru Kupava">
