@@ -2,6 +2,7 @@
 <html lang="cs">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Kupava Brno</title>
   <style>
     body {
@@ -18,15 +19,52 @@
       max-width: 100%;
       margin: 10px 0;
     }
+    .hlavicka {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      margin-bottom: 10px;
+    }
+    .logo {
+      width: 88px;
+      height: auto;
+    }
     .kontakt {
       background: #f5f5f5;
       padding: 15px;
+      border-radius: 8px;
     }
+    .btn {
+      display: inline-block;
+      padding: 10px 14px;
+      margin-top: 10px;
+      background: #2f4f4f;
+      color: #fff;
+      text-decoration: none;
+      border-radius: 8px;
+    }
+    .btn:hover {
+      opacity: 0.92;
+    }
+    .social {
+      margin: 10px 0 0 0;
+    }
+    .social a {
+      display: inline-block;
+      margin-right: 12px;
+      text-decoration: none;
+      color: #2f4f4f;
+      font-weight: bold;
+    }
+    ul { padding-left: 18px; }
   </style>
 </head>
 <body>
 
-<h1>Kupava Brno</h1>
+<div class="hlavicka">
+  <img class="logo" src="logo.png" alt="Logo Kupava Brno">
+  <h1>Kupava Brno</h1>
+</div>
 
 <p>
 Folklorní a pěvecký soubor Kupava Brno se věnuje ukrajinské lidové tradici,
@@ -35,21 +73,18 @@ zpěvu a kulturním vystoupením v České republice.
 
 <h2>O souboru</h2>
 <p>
-Soubor vznikl jako prostor pro setkávání, hudbu a uchovávání kulturní paměti.
-Vystupujeme na kulturních a komunitních akcích.
+Soubor vznikl v únoru 2023 v Brně. Kupava je staré slovanské jméno – znamená krásná,
+slavnostně oblečená; též žena s ladnou, hrdou chůzí. Soubor se věnuje folklóru
+z různých regionů Ukrajiny. Jde o tradiční vícehlasý zpěv doprovázený živou hudbou.
 </p>
 
-<h2>Fotogalerie</h2>
-<img src="foto1.jpg" alt="Kupava vystoupení">
-<img src="foto2.jpg" alt="Kupava vystoupení">
-
-<h2>Kontakt</h2>
-<div class="kontakt">
-<p>
-📧 E-mail: <a href="mailto:info@kupavabrno.cz">info@kupavabrno.cz</a><br>
-📍 Brno
-</p>
-</div>
-
-</body>
-</html>
+<h2>Vystoupení na YouTube</h2>
+<ul>
+  <li>
+    <a href="https://www.youtube.com/watch?v=ptXL8v-0SIU&list=PLs8RLUolQE94FKIigKi2Ps-FzuV7cxNQO"
+       target="_blank" rel="noopener">
+      Zhlédnout playlist 1
+    </a>
+  </li>
+  <li>
+    <a href="https://www.youtube.com/watch?v=qvbnvvhpYXQ&list
