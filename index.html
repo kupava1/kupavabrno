@@ -4,264 +4,402 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Kupava Brno</title>
+
   <style>
     :root{
+      --brand:#0f5a5f;
+      --brand-dark:#0b3f55;
       --accent:#2f4f4f;
+      --text:#122020;
+      --muted:#4a5b5b;
       --bg:#ffffff;
-      --soft:#f5f5f5;
-      --soft2:#eef3f3;
-      --text:#1f2a2a;
-    }
-    body{
-      font-family: Arial, sans-serif;
-      background: var(--bg);
-      color: var(--text);
-      max-width: 960px;
-      margin: 28px auto 60px;
-      padding: 0 18px;
-      line-height: 1.65;
+      --card:#f6f8f8;
+      --border:#e2e8e8;
+      --shadow:0 14px 34px rgba(0,0,0,.12);
+      --radius:18px;
     }
 
-    /* Header */
-    .hlavicka{
+    *{ box-sizing:border-box; }
+
+    body{
+      margin:0;
+      font-family: Arial, sans-serif;
+      background:var(--bg);
+      color:var(--text);
+      line-height:1.7;
+    }
+
+    a{ color:var(--brand); }
+    a:hover{ opacity:.9; }
+
+    /* ===== TOP BAR ===== */
+    .topbar{
+      position:sticky;
+      top:0;
+      z-index:10;
+      background:linear-gradient(90deg,var(--brand-dark),var(--brand));
+      color:#fff;
+      box-shadow:0 8px 22px rgba(0,0,0,.18);
+    }
+
+    .topbar-inner{
+      max-width:1100px;
+      margin:0 auto;
+      padding:10px 18px;
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      gap:12px;
+    }
+
+    .brand{
       display:flex;
       align-items:center;
-      gap:14px;
-      padding: 14px 16px;
-      border-radius: 14px;
-      background: linear-gradient(180deg, var(--soft2), #fff);
-      border: 1px solid #e7ecec;
-      margin-bottom: 18px;
-    }
-    .logo{
-      width: 84px;
-      height: auto;
-    }
-    h1{
-      margin:0;
-      color: var(--accent);
-      font-size: 30px;
-      letter-spacing: .2px;
-    }
-    .tagline{
-      margin: 6px 0 0 0;
-      color:#3d4c4c;
-      font-size: 15px;
-    }
-
-    /* Sections */
-    h2{
-      color: var(--accent);
-      margin: 26px 0 10px;
-      font-size: 22px;
-    }
-    .card{
-      background: var(--soft);
-      border: 1px solid #e7ecec;
-      border-radius: 14px;
-      padding: 16px;
-    }
-    .lead{
-      font-size: 16px;
-      margin: 0;
-    }
-
-    /* Gallery */
-    .gallery{
-      display: grid;
-      grid-template-columns: 1fr;
-      gap: 12px;
-    }
-    .gallery img{
-      width: 100%;
-      height: auto;
-      border-radius: 14px;
-      border: 1px solid #e7ecec;
-      background: #fff;
-    }
-    @media (min-width: 720px){
-      .gallery{
-        grid-template-columns: 1fr 1fr;
-      }
-    }
-
-    /* Contact */
-    .kontakt-grid{
-      display:grid;
-      grid-template-columns: 1fr;
-      gap: 12px;
-    }
-    @media (min-width: 720px){
-      .kontakt-grid{
-        grid-template-columns: 1.2fr .8fr;
-        align-items: start;
-      }
-    }
-    .kontakt-line{
-      margin: 0 0 8px 0;
-    }
-    .kontakt-line a{
-      color: var(--accent);
-      text-decoration: none;
-      font-weight: bold;
-    }
-    .kontakt-line a:hover{
-      text-decoration: underline;
-    }
-
-    /* Buttons */
-    .btn{
-      display:inline-flex;
-      align-items:center;
       gap:10px;
-      padding: 11px 14px;
-      background: var(--accent);
-      color: #fff;
-      text-decoration:none;
-      border-radius: 12px;
-      font-weight: bold;
-      border: 1px solid rgba(0,0,0,.08);
-      margin-top: 8px;
     }
-    .btn:hover{ opacity:.93; }
 
-    /* Social icons */
-    .social{
-      margin-top: 6px;
+    .brand img{
+      width:30px;
+      height:30px;
+      object-fit:contain;
+      border-radius:10px;
+      background:rgba(255,255,255,.15);
+      padding:4px;
     }
-    .social-title{
-      margin: 0 0 10px 0;
-      font-weight: bold;
-      color:#2e3b3b;
+
+    .brand-title{
+      font-weight:800;
+      font-size:15px;
+      line-height:1.1;
     }
+
+    .brand-sub{
+      font-size:12px;
+      opacity:.85;
+    }
+
+    nav{
+      display:flex;
+      gap:14px;
+      flex-wrap:wrap;
+    }
+
+    nav a{
+      color:#fff;
+      text-decoration:none;
+      font-weight:700;
+      font-size:13px;
+    }
+
+    nav a:hover{ text-decoration:underline; }
+
+    /* ===== HERO ===== */
+    .hero{
+      min-height:420px;
+      background:
+        linear-gradient(180deg,rgba(0,0,0,.35),rgba(0,0,0,.15),rgba(255,255,255,0)),
+        url("foto1.jpg");
+      background-size:cover;
+      background-position:center;
+    }
+
+    .hero-inner{
+      max-width:1100px;
+      margin:0 auto;
+      padding:60px 18px 40px;
+      color:#fff;
+    }
+
+    .badge{
+      display:inline-block;
+      padding:8px 14px;
+      border-radius:999px;
+      background:rgba(255,255,255,.18);
+      font-weight:700;
+      font-size:13px;
+      margin-bottom:14px;
+    }
+
+    .hero h1{
+      font-size:46px;
+      margin:0 0 10px;
+      text-shadow:0 12px 30px rgba(0,0,0,.4);
+    }
+
+    .hero p{
+      font-size:18px;
+      max-width:820px;
+      text-shadow:0 12px 30px rgba(0,0,0,.4);
+    }
+
+    /* ===== CONTENT ===== */
+    .container{
+      max-width:1100px;
+      margin:0 auto;
+      padding:30px 18px 70px;
+    }
+
+    h2{
+      margin:0 0 14px;
+      font-size:22px;
+      color:var(--accent);
+    }
+
+    .card{
+      background:var(--card);
+      border:1px solid var(--border);
+      border-radius:var(--radius);
+      padding:20px;
+      box-shadow:var(--shadow);
+    }
+
+    .lead{ font-size:16px; }
+
+    .muted{ color:var(--muted); }
+
+    /* ===== GALLERY ===== */
+    .gallery{
+      display:grid;
+      grid-template-columns:1fr;
+      gap:14px;
+    }
+
+    .gallery img,
+    .mosaic img{
+      width:100%;
+      height:auto;
+      border-radius:var(--radius);
+      border:1px solid var(--border);
+      box-shadow:var(--shadow);
+      background:#fff;
+    }
+
+    /* Mosaic – 8 fotek */
+    .mosaic{
+      margin-top:14px;
+      display:grid;
+      gap:14px;
+    }
+
+    @media(min-width:760px){
+      .gallery{ grid-template-columns:1fr 1fr; }
+
+      .mosaic{
+        grid-template-columns:repeat(4,1fr);
+      }
+      .mosaic img:nth-child(3){
+        grid-column:span 2;
+        grid-row:span 2;
+      }
+      .mosaic img:nth-child(7){
+        grid-column:span 2;
+      }
+    }
+
+    @media(max-width:759px){
+      .mosaic{
+        grid-template-columns:repeat(2,1fr);
+      }
+      .mosaic img:nth-child(3){
+        grid-column:span 2;
+      }
+    }
+
+    /* ===== CONTACT ===== */
+    .grid{
+      display:grid;
+      gap:18px;
+    }
+
+    @media(min-width:900px){
+      .grid{
+        grid-template-columns:1.2fr .8fr;
+      }
+    }
+
+    .contact-line{
+      margin:0 0 10px;
+      font-size:15px;
+    }
+
+    .contact-line a{
+      font-weight:800;
+      text-decoration:none;
+    }
+
+    .btn{
+      display:inline-block;
+      margin-top:10px;
+      padding:12px 16px;
+      border-radius:14px;
+      background:linear-gradient(90deg,var(--brand-dark),var(--brand));
+      color:#fff;
+      text-decoration:none;
+      font-weight:800;
+      box-shadow:0 12px 26px rgba(0,0,0,.25);
+    }
+
+    /* ===== SOCIAL ===== */
     .social-links{
       display:flex;
-      flex-wrap: wrap;
       gap:10px;
+      flex-wrap:wrap;
     }
+
     .pill{
-      display:inline-flex;
+      display:flex;
       align-items:center;
       gap:10px;
-      padding: 10px 12px;
-      background: #fff;
-      border: 1px solid #e7ecec;
-      border-radius: 999px;
-      text-decoration: none;
-      color: var(--accent);
-      font-weight: bold;
-    }
-    .pill:hover{ background: #fbfbfb; }
-
-    .icon{
-      width: 18px;
-      height: 18px;
-      display:inline-block;
+      padding:10px 14px;
+      background:#fff;
+      border:1px solid var(--border);
+      border-radius:999px;
+      font-weight:800;
+      text-decoration:none;
+      box-shadow:0 10px 20px rgba(0,0,0,.1);
     }
 
-    /* YouTube */
-    .yt-list{
-      margin: 0;
-      padding-left: 18px;
+    .pill svg{
+      width:18px;
+      height:18px;
     }
-    .yt-list a{
-      color: var(--accent);
-      font-weight: bold;
-      text-decoration: none;
-    }
-    .yt-list a:hover{ text-decoration: underline; }
 
-    /* Footer note */
-    .note{
-      margin-top: 10px;
-      font-size: 13px;
-      color: #4a5858;
+    /* ===== FOOTER ===== */
+    .footer{
+      text-align:center;
+      margin-top:40px;
+      font-size:12px;
+      color:#666;
     }
   </style>
 </head>
+
 <body>
 
-<header class="hlavicka">
-  <img class="logo" src="logo.png" alt="Logo Kupava Brno">
-  <div>
-    <h1>Kupava Brno</h1>
-    <p class="tagline">Tradiční ukrajinský vícehlasý zpěv a živá hudba — folklór, který je slyšet i cítit.</p>
+<div class="topbar">
+  <div class="topbar-inner">
+    <div class="brand">
+      <img src="logo.png" alt="Kupava Brno logo">
+      <div>
+        <div class="brand-title">Kupava Brno</div>
+        <div class="brand-sub">ukrajinský folklór • zpěv • živá hudba</div>
+      </div>
+    </div>
+    <nav>
+      <a href="#o-souboru">O souboru</a>
+      <a href="#fotogalerie">Fotky</a>
+      <a href="#youtube">YouTube</a>
+      <a href="#kontakt">Kontakt</a>
+    </nav>
   </div>
-</header>
+</div>
+
+<section class="hero">
+  <div class="hero-inner">
+    <div class="badge">Brno • folklór • živě</div>
+    <h1>Kupava Brno</h1>
+    <p>Tradiční ukrajinský vícehlasý zpěv a živá hudba. Folklór, který je vidět a slyšet.</p>
+  </div>
+</section>
+
+<div class="container">
 
 <section class="card">
   <p class="lead">
-    Jsme folklorní a pěvecký soubor z Brna. Přinášíme písně z různých regionů Ukrajiny v autentickém vícehlasu,
-    doprovázené živou hudbou — s energií, která rozezní i celé náměstí.
+    Jsme folklorní a pěvecký soubor z Brna. Přinášíme písně z různých regionů Ukrajiny
+    v autentickém vícehlasu, doprovázené živou hudbou – s energií, která funguje
+    stejně silně na jevišti i pod širým nebem.
   </p>
 </section>
 
-<h2>O souboru</h2>
-<section class="card">
-  <p class="lead">
-    Soubor vznikl v únoru 2023 v Brně. <strong>Kupava</strong> je staré slovanské jméno — znamená krásná,
-    slavnostně oblečená; též žena s ladnou, hrdou chůzí. Věnujeme se folklóru z různých regionů Ukrajiny.
-    Jde o tradiční vícehlasý zpěv doprovázený živou hudbou.
-  </p>
+<section id="o-souboru">
+  <h2>O souboru</h2>
+  <div class="card">
+    <p class="lead">
+      Soubor Kupava vznikl v únoru 2023 na půdě a za podpory Ukrajinského centra v Brně.
+      Kupava je staré slovanské jméno – znamená krásná, slavnostně oblečená,
+      případně žena s ladnou a hrdou chůzí.
+    </p>
+
+    <p class="lead">
+      Věnujeme se folklóru z různých regionů Ukrajiny. Základem je tradiční vícehlasý zpěv,
+      který přirozeně doplňuje živá hudba a práce s rytmem i prostorem.
+    </p>
+
+    <p class="lead">
+      Nedílnou součástí našich vystoupení jsou bohaté kroje, zejména vyšívané košile –
+      <strong>vyšyvanky</strong>. Ty se v posledních letech znovu staly silným symbolem
+      identity a hrdosti a jsou běžně nošeny nejen při slavnostech, ale i v každodenním životě.
+    </p>
+
+    <p class="lead">
+      I přes krátké působení na folklorní scéně jsme vystoupili na
+      <strong>MFF Strážnice 2023</strong> (pořad Domovina),
+      <strong>MFSF Jánošíkov dukát 2023</strong>
+      a na <strong>Slavnostech Chleba ve Slupi</strong>.
+    </p>
+
+    <p class="muted">
+      Vedoucí souboru: <strong>Mgr. Kateryna Mykhaylova</strong><br>
+      Tel: <a href="tel:+420777072433">+420 777 072 433</a>
+    </p>
+  </div>
 </section>
 
-<h2>Fotogalerie</h2>
-<section class="gallery">
-  <img src="foto1.jpg" alt="Kupava – vystoupení">
-  <img src="foto2.jpg" alt="Kupava – vystoupení">
+<section id="fotogalerie">
+  <h2>Fotogalerie</h2>
+
+  <div class="gallery">
+    <img src="foto1.jpg" alt="Kupava vystoupení">
+    <img src="foto2.jpg" alt="Kupava vystoupení">
+  </div>
+
+  <div class="card" style="margin-top:18px;">
+    <p class="lead"><strong>Momentky z vystoupení</strong></p>
+    <div class="mosaic">
+      <img src="foto1.jpg" alt="Momentka 1">
+      <img src="foto2.jpg" alt="Momentka 2">
+      <img src="foto3.jpg" alt="Momentka 3">
+      <img src="foto4.jpg" alt="Momentka 4">
+      <img src="foto5.jpg" alt="Momentka 5">
+      <img src="foto6.jpg" alt="Momentka 6">
+      <img src="foto7.jpg" alt="Momentka 7">
+      <img src="foto8.jpg" alt="Momentka 8">
+    </div>
+  </div>
 </section>
 
-<h2>Vystoupení na YouTube</h2>
-<section class="card">
-  <p class="lead" style="margin-bottom:10px;">
-    Záznamy z našich vystoupení si můžete zhlédnout i na YouTube:
-  </p>
-  <ul class="yt-list">
-    <li>
-      <a href="https://www.youtube.com/watch?v=ptXL8v-0SIU&list=PLs8RLUolQE94FKIigKi2Ps-FzuV7cxNQO" target="_blank" rel="noopener">
-        Playlist 1
-      </a>
-    </li>
-    <li>
-      <a href="https://www.youtube.com/watch?v=qvbnvvhpYXQ&list=PLs8RLUolQE94t0YRGZ3u8ZIh3bfrB9ls5" target="_blank" rel="noopener">
-        Playlist 2
-      </a>
-    </li>
-  </ul>
+<section id="youtube">
+  <h2>Vystoupení na YouTube</h2>
+  <div class="card">
+    <p class="lead">Záznamy z našich vystoupení:</p>
+    <p>
+      ▶ <a href="https://www.youtube.com/watch?v=ptXL8v-0SIU&list=PLs8RLUolQE94FKIigKi2Ps-FzuV7cxNQO" target="_blank">Babylonfest 2023</a><br>
+      ▶ <a href="https://www.youtube.com/watch?v=qvbnvvhpYXQ&list=PLs8RLUolQE94t0YRGZ3u8ZIh3bfrB9ls5" target="_blank">Ukrajinské koledy</a>
+    </p>
+  </div>
 </section>
 
-<h2>Kontakt</h2>
-<section class="card">
-  <div class="kontakt-grid">
+<section id="kontakt">
+  <h2>Kontakt</h2>
+  <div class="card grid">
     <div>
-      <p class="kontakt-line">📧 E-mail: <a href="mailto:kupava@kupavabrno.cz">kupava@kupavabrno.cz</a></p>
-      <p class="kontakt-line">📞 Telefon: <a href="tel:+420733149538">+420&nbsp;733&nbsp;149&nbsp;538</a></p>
-      <p class="kontakt-line">📍 Brno</p>
+      <p class="contact-line">📧 <a href="mailto:kupava@kupavabrno.cz">kupava@kupavabrno.cz</a></p>
+      <p class="contact-line">📞 <a href="tel:+420777072433">+420 777 072 433</a></p>
+      <p class="contact-line">📍 Brno</p>
 
-      <!-- "Napsat zprávu" hned pod kontakty -->
-      <a class="btn" href="mailto:kupava@kupavabrno.cz?subject=Zpr%C3%A1va%20z%20webu%20Kupava%20Brno&body=Dobr%C3%BD%20den%2C%0A%0A">
+      <a class="btn" href="mailto:kupava@kupavabrno.cz?subject=Zpráva z webu Kupava Brno">
         ✉️ Napsat zprávu
       </a>
-
-      <p class="note">Pozn.: tlačítko otevře e-mail s předvyplněným předmětem (bez ukládání dat).</p>
     </div>
 
-    <div class="social">
-      <p class="social-title">Sledujte nás na sociálních sítích</p>
+    <div>
+      <p><strong>Sledujte nás</strong></p>
       <div class="social-links">
-        <a class="pill" href="https://www.facebook.com/KupavaBrno" target="_blank" rel="noopener" aria-label="Facebook Kupava Brno">
-          <!-- Facebook icon (SVG) -->
-          <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
-            <path fill="currentColor" d="M13.5 22v-8h2.7l.4-3H13.5V9.1c0-.9.3-1.6 1.6-1.6H16.7V5.1c-.3 0-1.3-.1-2.4-.1-2.4 0-4.1 1.5-4.1 4.3V11H7.5v3h2.7v8h3.3Z"/>
-          </svg>
+        <a class="pill" href="https://www.facebook.com/KupavaBrno" target="_blank">
           Facebook
         </a>
-
-        <a class="pill" href="https://www.instagram.com/soubor_kupava/" target="_blank" rel="noopener" aria-label="Instagram soubor_kupava">
-          <!-- Instagram icon (SVG) -->
-          <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
-            <path fill="currentColor" d="M7.5 2h9A5.5 5.5 0 0 1 22 7.5v9A5.5 5.5 0 0 1 16.5 22h-9A5.5 5.5 0 0 1 2 16.5v-9A5.5 5.5 0 0 1 7.5 2Zm0 2A3.5 3.5 0 0 0 4 7.5v9A3.5 3.5 0 0 0 7.5 20h9A3.5 3.5 0 0 0 20 16.5v-9A3.5 3.5 0 0 0 16.5 4h-9ZM12 7a5 5 0 1 1 0 10a5 5 0 0 1 0-10Zm0 2a3 3 0 1 0 0 6a3 3 0 0 0 0-6Zm5.6-2.1a1.2 1.2 0 1 1 0 2.4a1.2 1.2 0 0 1 0-2.4Z"/>
-          </svg>
+        <a class="pill" href="https://www.instagram.com/soubor_kupava/" target="_blank">
           Instagram
         </a>
       </div>
@@ -269,5 +407,10 @@
   </div>
 </section>
 
+<div class="footer">
+  © Kupava Brno
+</div>
+
+</div>
 </body>
 </html>
