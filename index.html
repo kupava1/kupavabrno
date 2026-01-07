@@ -112,26 +112,27 @@
     nav a:hover{ background:#f2f6f6; }
 
     /* ===== HERO ===== */
-    .hero{
-      min-height:440px;
-      background:
-        linear-gradient(180deg,rgba(0,0,0,.34),rgba(0,0,0,.14),rgba(255,255,255,0)),
-        url("foto1.jpg");
-      background-size:cover;
+   /* ===== HERO ===== */
+.hero{
+  min-height:440px;
+  background:
+    linear-gradient(180deg,rgba(0,0,0,.34),rgba(0,0,0,.14),rgba(255,255,255,0)),
+    url("foto1.jpg");
+  background-size:cover;
+  background-position:center 35%;
 
-      /* POSUN PRO OBLIČEJE – upravuj jemně dle potřeby:
-         - menší % = více nahoru
-         - větší % = více dolů
-      */
-      background-position:center 35%;
-    }
+  /* NOVĚ: text bude dole */
+  display:flex;
+  align-items:flex-end;
+}
 
-    .hero-inner{
-      max-width:1100px;
-      margin:0 auto;
-      padding:64px 18px 40px;
-      color:#fff;
-    }
+.hero-inner{
+  max-width:1100px;
+  margin:0 auto;
+  padding:28px 18px 56px; /* víc dole */
+  color:#fff;
+  width:100%;
+}
 
     .badge{
       display:inline-flex;
