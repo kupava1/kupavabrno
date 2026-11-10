@@ -1,6 +1,6 @@
 /* Souhlas s cookies + Google Analytics 4 (načte se až po souhlasu návštěvníka) */
 (function(){
-  var GA_ID = 'G-X6NC9E6Y45', KEY = 'kupava_consent_v1';
+  var GA_ID = 'G-X6NC9E6Y45', ADS_ID = 'AW-18567655723', KEY = 'kupava_consent_v1';
   window.dataLayer = window.dataLayer || [];
   window.gtag = window.gtag || function(){ window.dataLayer.push(arguments); };
 
@@ -20,6 +20,7 @@
     gtag('consent','default',{analytics_storage:'granted',ad_storage:'granted',ad_user_data:'granted',ad_personalization:'denied'});
     gtag('js', new Date());
     gtag('config', GA_ID, {anonymize_ip:true});
+    gtag('config', ADS_ID);
     var s = document.createElement('script'); s.async = true; s.src = 'https://www.googletagmanager.com/gtag/js?id=' + GA_ID;
     document.head.appendChild(s);
   }
