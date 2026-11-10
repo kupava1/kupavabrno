@@ -282,3 +282,17 @@ footer b{color:#fff}
 .others a{font-weight:700}
 @media (max-width:1020px){.news,.press{grid-template-columns:1fr}.news{gap:20px}}
 @media (max-width:640px){.nav-simple>a:not(.btn){display:none}.nav-simple .btn{display:none}}
+
+/* lišta souhlasu s cookies */
+#cookie-bar{position:fixed;left:16px;right:16px;bottom:16px;z-index:90;max-width:760px;margin:0 auto;background:#fff;color:var(--ink);border:1px solid var(--line);border-radius:10px;box-shadow:0 20px 50px rgba(10,20,40,.25);padding:16px 18px;display:flex;gap:16px;align-items:center}
+#cookie-bar p{margin:0;font-size:14.5px;line-height:1.5;flex:1}
+#cookie-bar .cb-btns{display:flex;gap:8px;flex-shrink:0}
+footer .cookie-link{color:rgba(255,255,255,.65);text-decoration:underline;font-size:12.5px}
+@media (max-width:640px){#cookie-bar{flex-direction:column;align-items:stretch}#cookie-bar .cb-btns{justify-content:flex-end}}
+
+/* galerie – symetrická mřížka */
+.gallery{grid-template-columns:repeat(3,1fr)!important;gap:14px}
+.gallery a{aspect-ratio:3/2!important;grid-column:auto!important;grid-row:auto!important}
+@media (max-width:1020px){.gallery{grid-template-columns:repeat(2,1fr)!important}}
+@media (max-width:640px){.gallery{grid-template-columns:repeat(2,1fr)!important;gap:8px}}
+.post-img figcaption{font-size:13px;color:var(--ink-soft);margin-top:8px;text-align:right}

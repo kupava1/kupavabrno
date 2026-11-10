@@ -42,7 +42,7 @@ X = {
             bio="Kupava is a Ukrainian folk ensemble from Brno, Czech Republic, founded in February 2023. It is dedicated to traditional Ukrainian polyphonic singing and folk music from many regions of Ukraine, performed in the original language, in traditional dress and with live music. The ensemble has performed at the Strážnice International Folklore Festival, Smetana’s Litomyšl, the Chod Festival and in the live TV Noe broadcast of Concert for Life II. Artistic director: Kateryna Mykhaylova.",
             foot_press="Press kit"),
 }
-PRESS_PHOTOS = [("soubor-portret","Kupava – skupinový portrét / group portrait"),("program-vanoce","Staroukrajinské Vánoce / Old Ukrainian Christmas"),
+PRESS_PHOTOS = [("soubor-portret","Kupava – skupinový portrét / group portrait"),("vanoce-viden-2023","Staroukrajinské Vánoce / Old Ukrainian Christmas"),
                 ("program-regiony","Kupava na pódiu / on stage"),("koledy-moravske-namesti","Koledování v Brně / Carolling in Brno"),("festival-podium","Festivalové vystoupení / Festival performance")]
 N_PAST = len(PAST)
 
@@ -82,18 +82,17 @@ VIDEOS = [
 
 GALLERY = [
  ("soubor-prerov", {"cs":"Kupava v Přerově","uk":"«Купава» у Пршерові","en":"Kupava in Přerov"}),
+ ("festival-podium", {"cs":"Den národnostních menšin Jihomoravského kraje","uk":"День національних меншин Південноморавського краю","en":"South Moravian National Minorities Day"}),
  ("koledy-podium-kostel", {"cs":"Staroukrajinské Vánoce","uk":"Староукраїнське Різдво","en":"Old Ukrainian Christmas"}),
- ("koledy-moravske-namesti", {"cs":"Vánoční koledování v Brně","uk":"Різдвяне колядування в Брно","en":"Christmas carolling in Brno"}),
  ("housle-podium", {"cs":"Živá hudba na pódiu","uk":"Жива музика на сцені","en":"Live music on stage"}),
- ("vinok-portret", {"cs":"Zpěvačka ve věnci","uk":"Співачка у вінку","en":"Singer wearing a floral wreath"}),
+ ("viden-hvezda-2025", {"cs":"Koledy ve Vídni 2025","uk":"Колядки у Відні 2025","en":"Carols in Vienna 2025"}),
  ("zpev-radost", {"cs":"Vícehlasý zpěv","uk":"Багатоголосий спів","en":"Polyphonic singing"}),
- ("kroje-detail", {"cs":"Vyšívané kroje a korále","uk":"Вишиті строї та коралі","en":"Embroidered costumes and coral beads"}),
- ("soubor-v-krojich", {"cs":"Vánoční koncert","uk":"Різдвяний концерт","en":"Christmas concert"}),
- ("koledy-hvezda", {"cs":"Koledy s vánoční hvězdou","uk":"Колядки з різдвяною зіркою","en":"Carols with the Christmas star"}),
+ ("koledy-moravske-namesti", {"cs":"Vánoční koledování v Brně","uk":"Різдвяне колядування в Брно","en":"Christmas carolling in Brno"}),
+ ("podium-celek", {"cs":"Kupava na festivalovém pódiu","uk":"«Купава» на фестивальній сцені","en":"Kupava on a festival stage"}),
+ ("palac-hvezda-2024", {"cs":"Vánoční koncert v Paláci šlechtičen","uk":"Різдвяний концерт у Палаці шляхетних панн","en":"Christmas concert at the Palace of Noblewomen"}),
+ ("vinky", {"cs":"Koncert pro život II, TV Noe","uk":"«Концерт для життя II», TV Noe","en":"Concert for Life II, TV Noe"}),
  ("zpevacky-podium", {"cs":"Zpěvačky v krojích","uk":"Співачки у строях","en":"Singers in traditional dress"}),
- ("akordeon", {"cs":"Harmonika","uk":"Акордеон","en":"Accordion"}),
- ("soubor-straznice", {"cs":"MFF Strážnice","uk":"МФФ у Стражніце","en":"Strážnice Folklore Festival"}),
- ("zpev-vinok", {"cs":"Sólový zpěv","uk":"Сольний спів","en":"Solo singing"}),
+ ("podium-tanec", {"cs":"Písně a tanec na pódiu","uk":"Пісні й танець на сцені","en":"Songs and dance on stage"}),
 ]
 
 T = {
@@ -105,7 +104,7 @@ T = {
   nav=[("#o-nas","O nás"),("#repertoar","Repertoár"),("#vystoupeni","Vystoupení"),("#video","Video"),("#galerie","Galerie")],
   nav_cta="Kontakt",
   eyebrow="Ukrajinský folklorní soubor · Brno",
-  lead="Autentický vícehlasý zpěv a živá lidová hudba z různých regionů Ukrajiny.",
+  lead="Tradiční vícehlasý zpěv a živá lidová hudba z různých regionů Ukrajiny.",
   cta1="Poslechnout si nás", cta2="Napište nám",
   photo_alt="Ukrajinský folklorní soubor Kupava v krojích",
   stats=[("2023","založení souboru"),(str(N_PAST),"vystoupení"),("10+","folklorních festivalů"),("3","země – Česko, Slovensko, Rakousko")],
@@ -122,11 +121,11 @@ T = {
            ("Představujeme","Přinášíme ukrajinský folklór na pódia festivalů, do koncertních sálů i kostelů."),
            ("Spojujeme","Podporujeme setkávání a porozumění mezi ukrajinskou a českou kulturou.")],
   tv_k="Koncert pro život II", tv_h="Živě na TV Noe",
-  tv_p="V dubnu 2025 vystoupila Kupava v Ostravě v přímém přenosu benefičního Koncertu pro život II na podporu Ukrajiny, který vysílala TV Noe. Na jednom pódiu spolu s Pavlem Helanem, kapelou Sonjašnyk se smyčcovým kvartetem a dětským sborem Spivanočky.",
+  tv_p="V dubnu 2025 vystoupila Kupava v kostele sv. Václava v Ostravě na benefičním Koncertu pro život II, který živě vysílala TV Noe. Spolu s písničkářem Pavlem Helanem, česko-ukrajinským sborem Sonjašnyk a dětským sborem Spivanočky jsme podpořili rehabilitaci válečných veteránů a zraněných dětí z Ukrajiny – diváci přispěli 200 000 Kč.",
   tv_meta="6. dubna 2025 · Ostrava · TV Noe",
   rep_k="Repertoár", rep_h="Koncertní programy",
-  progs=[("program-vanoce","Staroukrajinské Vánoce","Koledy a ščedrivky s vánoční hvězdou. Sváteční program, který každoročně uvádíme v Brně a ve Vídni."),
-         ("program-regiony","Písně ukrajinských regionů","Lyrické, obřadní a taneční písně v autentickém vícehlasu s živou hudbou – pro festivaly, koncertní sály a kulturní události.")],
+  progs=[("vanoce-viden-2023","Staroukrajinské Vánoce","Koledy a ščedrivky s vánoční hvězdou. Sváteční program, který každoročně uvádíme v Brně a ve Vídni."),
+         ("program-regiony","Písně ukrajinských regionů","Lyrické, obřadní a taneční písně v tradičním vícehlasu s živou hudbou – pro festivaly, koncertní sály a kulturní události.")],
   rep_list="Z repertoáru", rep_note="Písně zpíváme v ukrajinštině; uvádíme český překlad názvu.",
   perf_k="Vystoupení", perf_h="Významná vystoupení", up_k="Připravujeme",
   perf_note=f"Celkem {N_PAST} vystoupení od roku 2023 – festivaly, koncerty a komunitní akce v Česku, na Slovensku a v Rakousku.",
@@ -150,7 +149,7 @@ T = {
   nav=[("#o-nas","Про нас"),("#repertoar","Репертуар"),("#vystoupeni","Виступи"),("#video","Відео"),("#galerie","Галерея")],
   nav_cta="Контакти",
   eyebrow="Український фольклорний ансамбль · Брно",
-  lead="Автентичний багатоголосий спів і жива народна музика з різних регіонів України.",
+  lead="Традиційний багатоголосий спів і жива народна музика з різних регіонів України.",
   cta1="Послухати нас", cta2="Напишіть нам",
   photo_alt="Український фольклорний ансамбль «Купава» у народних строях",
   stats=[("2023","рік заснування"),(str(N_PAST),"виступів"),("10+","фольклорних фестивалів"),("3","країни – Чехія, Словаччина, Австрія")],
@@ -167,11 +166,11 @@ T = {
            ("Представляємо","Виносимо український фольклор на сцени фестивалів, у концертні зали й храми."),
            ("Єднаємо","Підтримуємо зустрічі та порозуміння між українською і чеською культурами.")],
   tv_k="Концерт для життя II", tv_h="Наживо на TV Noe",
-  tv_p="У квітні 2025 року «Купава» виступила в Остраві в прямому ефірі благодійного «Концерту для життя II» на підтримку України, який транслювало TV Noe. На одній сцені з Павлом Геланом, гуртом «Соняшник» зі струнним квартетом і дитячим хором «Співаночки».",
+  tv_p="У квітні 2025 року «Купава» виступила в храмі св. Вацлава в Остраві на благодійному «Концерті для життя II», який наживо транслювало TV Noe. Разом зі співаком Павлом Геланом, чесько-українським хором «Соняшник» і дитячим хором «Співаночки» ми підтримали реабілітацію ветеранів війни та поранених дітей з України – глядачі пожертвували 200 000 крон.",
   tv_meta="6 квітня 2025 · Острава · TV Noe",
   rep_k="Репертуар", rep_h="Концертні програми",
-  progs=[("program-vanoce","Староукраїнське Різдво","Колядки й щедрівки з різдвяною зіркою. Святкова програма, яку ми щороку представляємо в Брно та Відні."),
-         ("program-regiony","Пісні українських регіонів","Ліричні, обрядові й танцювальні пісні в автентичному багатоголоссі з живою музикою – для фестивалів, концертних залів і культурних подій.")],
+  progs=[("vanoce-viden-2023","Староукраїнське Різдво","Колядки й щедрівки з різдвяною зіркою. Святкова програма, яку ми щороку представляємо в Брно та Відні."),
+         ("program-regiony","Пісні українських регіонів","Ліричні, обрядові й танцювальні пісні в традиційному багатоголоссі з живою музикою – для фестивалів, концертних залів і культурних подій.")],
   rep_list="З репертуару", rep_note="Ми співаємо українською, в оригінальному звучанні.",
   perf_k="Виступи", perf_h="Визначні виступи", up_k="Найближчі виступи",
   perf_note=f"Загалом {N_PAST} виступів з 2023 року – фестивалі, концерти й громадські події в Чехії, Словаччині та Австрії.",
@@ -195,7 +194,7 @@ T = {
   nav=[("#o-nas","About"),("#repertoar","Repertoire"),("#vystoupeni","Performances"),("#video","Video"),("#galerie","Gallery")],
   nav_cta="Contact",
   eyebrow="Ukrainian folk ensemble · Brno, Czech Republic",
-  lead="Authentic Ukrainian polyphonic singing and live folk music from many regions of Ukraine.",
+  lead="Traditional Ukrainian polyphonic singing and live folk music from many regions of Ukraine.",
   cta1="Listen to us", cta2="Get in touch",
   photo_alt="The Kupava Ukrainian folk ensemble in traditional dress",
   stats=[("2023","founded"),(str(N_PAST),"performances"),("10+","folklore festivals"),("3","countries – Czechia, Slovakia, Austria")],
@@ -212,11 +211,11 @@ T = {
            ("We present","We bring Ukrainian folklore to festival stages, concert halls and churches."),
            ("We connect","We foster encounters and understanding between Ukrainian and Czech culture.")],
   tv_k="Concert for Life II", tv_h="Live on TV Noe",
-  tv_p="In April 2025 Kupava performed in Ostrava in the live broadcast of the charity Concert for Life II in support of Ukraine, aired by TV Noe – sharing the stage with Pavel Helan, the band Sonjašnyk with a string quartet, and the Spivanočky children’s choir.",
+  tv_p="In April 2025 Kupava performed at St Wenceslas Church in Ostrava in the charity Concert for Life II, broadcast live by TV Noe. Together with singer-songwriter Pavel Helan, the Czech-Ukrainian choir Sonjašnyk and the Spivanočky children’s choir we supported the rehabilitation of war veterans and injured children from Ukraine – viewers donated CZK 200,000.",
   tv_meta="6 April 2025 · Ostrava · TV Noe",
   rep_k="Repertoire", rep_h="Concert programmes",
-  progs=[("program-vanoce","Old Ukrainian Christmas","Carols and shchedrivky with the Christmas star – a festive programme we present every year in Brno and Vienna."),
-         ("program-regiony","Songs of Ukraine’s Regions","Lyrical, ritual and dance songs in authentic polyphony with live music – for festivals, concert halls and cultural events.")],
+  progs=[("vanoce-viden-2023","Old Ukrainian Christmas","Carols and shchedrivky with the Christmas star – a festive programme we present every year in Brno and Vienna."),
+         ("program-regiony","Songs of Ukraine’s Regions","Lyrical, ritual and dance songs in traditional polyphony with live music – for festivals, concert halls and cultural events.")],
   rep_list="From our repertoire", rep_note="We sing in Ukrainian; English translations of the titles are given.",
   perf_k="Performances", perf_h="Selected performances", up_k="Upcoming",
   perf_note=f"{N_PAST} performances since 2023 in total – festivals, concerts and community events in Czechia, Slovakia and Austria.",
@@ -304,7 +303,7 @@ def page(lang):
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Manrope:wght@400;500;700;800&display=swap&subset=cyrillic,latin-ext" rel="stylesheet">
 <link rel="stylesheet" href="{pre}assets/style.css?v={VER}">
 <script type="application/ld+json">{json.dumps(ld, ensure_ascii=False)}</script>
-<!-- GOOGLE-TAG -->
+<script src="{pre}assets/consent.js?v={VER}" defer></script>
 </head>
 <body>
 <a class="skip" href="#o-nas">Skip</a>
@@ -337,7 +336,7 @@ def page(lang):
   <p class="director"><span>{e(t["director"])}</span><b>{e(t["director_name"])}</b></p>
   <p class="name-note">{e(t["name_note"])}</p>
  </div>
- <div class="about-pic"><img src="{pre}img/zpev-podium.jpg" alt="{e(GALLERY[4][1][lang])}" loading="lazy"></div>
+ <div class="about-pic"><img src="{pre}img/zpev-podium.jpg" alt="{e(GALLERY[1][1][lang])}" loading="lazy"></div>
 </div>
 <div class="wrap mission"><h3 class="mission-h">{e(t["pillars_h"])}</h3><div class="pillars">{pillars}</div></div>
 </section>
@@ -436,7 +435,7 @@ def fmt_post_date(d, lang):
 
 def news_section(lang, pre):
     x = X[lang]
-    cards = "".join(f'''<article class="news-card"><a href="aktuality/{po['slug']}/"><img src="{pre}img/g/{po['image']}.jpg" alt="" loading="lazy" width="760" height="506"></a><div><time datetime="{po.get('event_date', po['date'])}">{e(fmt_post_date(po.get('event_date', po['date']), lang))}</time><h3><a href="aktuality/{po['slug']}/">{e(po[lang]['title'])}</a></h3><p>{e(po[lang]['perex'])}</p><a class="link" href="aktuality/{po['slug']}/">{e(x['more'])} →</a></div></article>''' for po in POSTS[:3])
+    cards = "".join(f'''<article class="news-card"><a href="aktuality/{po['slug']}/"><img src="{pre}img/g/{po['image']}.jpg" alt="" loading="lazy" width="760" height="506"></a><div><time datetime="{po.get('event_date', po['date'])}">{e(fmt_post_date(po.get('event_date', po['date']), lang))}</time><h3><a href="aktuality/{po['slug']}/">{e(po[lang]['title'])}</a></h3><p>{e(po[lang]['perex'])}</p><a class="link" href="aktuality/{po['slug']}/">{e(x['more'])} →</a></div></article>''' for po in POSTS[:6])
     return f'''<section id="aktuality"><div class="wrap">
  <p class="kicker">{e(x["news_k"])}</p>
  <h2>{e(x["news_h"])}</h2>
@@ -504,7 +503,7 @@ def article(lang, po):
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Manrope:wght@400;500;700;800&display=swap&subset=cyrillic,latin-ext" rel="stylesheet">
 <link rel="stylesheet" href="{pre}assets/style.css?v={VER}">
 <script type="application/ld+json">{json.dumps(ld, ensure_ascii=False)}</script>
-<!-- GOOGLE-TAG -->
+<script src="{pre}assets/consent.js?v={VER}" defer></script>
 </head>
 <body class="article-page">
 <header class="top"><div class="wrap">
@@ -517,7 +516,7 @@ def article(lang, po):
   <h1>{e(P["title"])}</h1>
   <p class="lead">{e(P["perex"])}</p>
  </div>
- <figure class="wrap post-img"><img src="{pre}img/{po["image"]}.jpg" alt="{e(P["title"])}" width="2048" height="1365"></figure>
+ <figure class="wrap post-img"><img src="{pre}img/{po["image"]}.jpg" alt="{e(P["title"])}" width="2048" height="1365">{('<figcaption>' + e(po["credit"]) + '</figcaption>') if po.get("credit") else ''}</figure>
  <div class="wrap post-body">{body}
   <p class="post-cta"><a class="btn primary" href="{home}#kontakt">{e(t["nav_cta"])}</a> <a class="btn outline" href="{home}">{e(x["back"])}</a></p>
   <h2 class="others-h">{e(x["all_news"])}</h2><ul class="others">{others}</ul>

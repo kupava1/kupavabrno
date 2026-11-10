@@ -496,14 +496,15 @@
   },
   {
    "date": "2026-09-05",
-   "cs": "Lidový rok",
-   "uk": "«Народний рік»",
-   "en": "Lidový rok (Folk Year) festival",
+   "cs": "Mezinárodní folklorní festival Lidový rok",
+   "uk": "Міжнародний фольклорний фестиваль Lidový rok",
+   "en": "Lidový rok International Folklore Festival",
    "place": {
     "cs": "Velká Bystřice",
     "uk": "Велька Бистршице",
     "en": "Velká Bystřice"
-   }
+   },
+   "highlight": true
   },
   {
    "date": "2026-09-19",
