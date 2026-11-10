@@ -235,3 +235,7 @@ footer b{color:#fff}
 .dlg-x{position:absolute;top:10px;right:14px;background:none;border:0;font-size:34px;line-height:1;cursor:pointer;color:var(--ink-soft);padding:6px}
 .dlg-x:hover{color:var(--ink)}
 @media (max-width:640px){.form-dialog{padding:28px 20px 20px}.form-dialog h2{font-size:30px}}
+
+/* H1 obsahuje i popis souboru (SEO) */
+.hero h1 .eyebrow{display:block;font-family:var(--sans);font-size:12.5px;line-height:1.5;margin-bottom:.4em}
+.hero h1 .h1-name{display:block}

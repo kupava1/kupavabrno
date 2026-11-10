@@ -69,8 +69,9 @@ GALLERY = [
 
 T = {
 "cs": dict(
-  title="Kupava – ukrajinský folklorní soubor, Brno",
-  desc="Kupava je ukrajinský folklorní soubor z Brna. Autentický vícehlasý zpěv, lidová hudba a kroje z různých regionů Ukrajiny. MFF Strážnice, Smetanova Litomyšl, přímý přenos TV Noe.",
+  title="Kupava – ukrajinský folklorní soubor z Brna",
+  h1_pre="Ukrajinský folklorní soubor",
+  desc="Ukrajinský folklorní soubor Kupava z Brna – vícehlasý zpěv, živá lidová hudba a kroje. Vystoupení na festivalech, koncertech a v TV Noe. Kontakt pro pořadatele.",
   brand_sub="ukrajinský folklorní soubor",
   nav=[("#o-nas","O nás"),("#repertoar","Repertoár"),("#vystoupeni","Vystoupení"),("#video","Video"),("#galerie","Galerie")],
   nav_cta="Kontakt",
@@ -113,8 +114,9 @@ T = {
   foot_seat="Sídlo: Městečko 68, 664 61 Rajhrad", foot_reg="IČO 23686766 · spolek zapsaný u Krajského soudu v Brně, L 31074",
 ),
 "uk": dict(
-  title="Купава – український фольклорний ансамбль, Брно",
-  desc="«Купава» – український фольклорний ансамбль з Брно. Автентичний багатоголосий спів, народна музика й строї з різних регіонів України. МФФ у Стражніце, Smetanova Litomyšl, пряма трансляція TV Noe.",
+  title="Купава – український фольклорний ансамбль у Брно, Чехія",
+  h1_pre="Український фольклорний ансамбль",
+  desc="Український фольклорний ансамбль «Купава» з Брно (Чехія): багатоголосий спів, жива народна музика та строї. Фестивалі, концерти, TV Noe. Контакти.",
   brand_sub="український фольклорний ансамбль",
   nav=[("#o-nas","Про нас"),("#repertoar","Репертуар"),("#vystoupeni","Виступи"),("#video","Відео"),("#galerie","Галерея")],
   nav_cta="Контакти",
@@ -157,8 +159,9 @@ T = {
   foot_seat="Адреса: Městečko 68, 664 61 Rajhrad", foot_reg="IČO 23686766 · спілка зареєстрована Крайовим судом у Брно, L 31074",
 ),
 "en": dict(
-  title="Kupava – Ukrainian Folk Ensemble, Brno, Czech Republic",
-  desc="Kupava is a Ukrainian folk ensemble from Brno, Czech Republic: authentic polyphonic singing, folk music and costume from many regions of Ukraine. Strážnice Folklore Festival, Smetana’s Litomyšl, live on TV Noe.",
+  title="Kupava – Ukrainian Folk Ensemble from Brno, Czechia",
+  h1_pre="Ukrainian folk ensemble",
+  desc="Kupava is a Ukrainian folk ensemble from Brno, Czech Republic – polyphonic singing, live folk music and costume. Festivals, concerts, TV Noe. Contact us.",
   brand_sub="Ukrainian folk ensemble",
   nav=[("#o-nas","About"),("#repertoar","Repertoire"),("#vystoupeni","Performances"),("#video","Video"),("#galerie","Gallery")],
   nav_cta="Contact",
@@ -208,11 +211,22 @@ def page(lang):
     home = pre + ("" if lang == "cs" else lang + "/") or "./"
     name = "Купава" if lang == "uk" else "Kupava"
     alts = "\n".join(f'<link rel="alternate" hreflang="{l}" href="{BASE}{p}">' for l, p in LANGS.items())
-    ld = {"@context":"https://schema.org","@type":"PerformingGroup","name":"Kupava","alternateName":["Купава","Ukrajinský folklorní soubor KUPAVA, z.s."],
-          "description":t["desc"],"url":BASE+LANGS[lang],"logo":BASE+"/img/logo.png","image":BASE+"/img/soubor-portret.jpg",
-          "foundingDate":"2023-02","foundingLocation":"Brno","email":"kupava@kupavabrno.cz","telephone":"+420777072433",
+    SAME = ["https://www.facebook.com/KupavaBrno","https://www.instagram.com/soubor_kupava/","https://www.youtube.com/playlist?list=PLs8RLUolQE94t0YRGZ3u8ZIh3bfrB9ls5"]
+    INLANG = {"cs":"cs-CZ","uk":"uk-UA","en":"en"}[lang]
+    group = {"@type":["MusicGroup","PerformingGroup"],"@id":BASE+"/#kupava","name":"Kupava","alternateName":["Купава","Kupava Brno","Ukrajinský folklorní soubor Kupava"],
+          "legalName":"Ukrajinský folklorní soubor KUPAVA, z.s.","description":t["desc"],"url":BASE+"/","logo":BASE+"/img/logo.png","image":BASE+"/img/soubor-portret.jpg",
+          "genre":["Ukrainian folk music","Folk","Polyphonic singing"],"foundingDate":"2023-02","foundingLocation":{"@type":"Place","name":"Brno"},
+          "identifier":{"@type":"PropertyValue","propertyID":"IČO","value":"23686766"},"nonprofitStatus":"Nonprofit",
+          "email":"kupava@kupavabrno.cz","telephone":"+420777072433",
           "address":{"@type":"PostalAddress","streetAddress":"Městečko 68","postalCode":"66461","addressLocality":"Rajhrad","addressCountry":"CZ"},
-          "sameAs":["https://www.facebook.com/KupavaBrno","https://www.instagram.com/soubor_kupava/"]}
+          "areaServed":["CZ","SK","AT","Europe"],"sameAs":SAME}
+    events = [{"@type":"MusicEvent","name":ev[lang],"startDate":ev["date"],"endDate":ev.get("end",ev["date"]),"eventStatus":"https://schema.org/EventScheduled",
+               "eventAttendanceMode":"https://schema.org/OfflineEventAttendanceMode","location":{"@type":"Place","name":ev["place"][lang],"address":ev["place"][lang]},
+               "performer":{"@id":BASE+"/#kupava"},"organizer":{"@id":BASE+"/#kupava"},"image":BASE+"/img/soubor-portret.jpg","url":BASE+LANGS[lang]+"#vystoupeni"} for ev in UPCOMING]
+    ld = {"@context":"https://schema.org","@graph":[group,
+          {"@type":"WebSite","@id":BASE+"/#web","url":BASE+"/","name":"Kupava","inLanguage":["cs-CZ","uk-UA","en"],"publisher":{"@id":BASE+"/#kupava"}},
+          {"@type":"WebPage","url":BASE+LANGS[lang],"name":t["title"],"description":t["desc"],"inLanguage":INLANG,"isPartOf":{"@id":BASE+"/#web"},"about":{"@id":BASE+"/#kupava"},
+           "primaryImageOfPage":BASE+"/img/soubor-portret.jpg"}] + events}
     nav = "".join(f'<a href="{h}">{e(n)}</a>' for h, n in t["nav"])
     LBL = {"cs":"CZ","uk":"UA","en":"EN"}; CUR = ' aria-current="page"'
     langs = "".join('<a href="' + (pre + ("" if l=="cs" else l+"/") or "./") + f'" hreflang="{l}" lang="{l}"' + (CUR if l==lang else "") + f'>{LBL[l]}</a>' for l in LANGS)
@@ -248,7 +262,14 @@ def page(lang):
 <meta property="og:description" content="{e(t["desc"])}">
 <meta property="og:image" content="{BASE}/img/soubor-portret.jpg">
 <meta property="og:url" content="{BASE}{LANGS[lang]}">
-<link rel="icon" href="{pre}img/logo.png">
+<meta property="og:site_name" content="Kupava">
+<meta property="og:image:width" content="2048"><meta property="og:image:height" content="1365">
+<meta property="og:image:alt" content="{e(t["photo_alt"])}">
+<meta property="og:locale" content="{ {"cs":"cs_CZ","uk":"uk_UA","en":"en_GB"}[lang] }">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="robots" content="index,follow,max-image-preview:large">
+<link rel="icon" type="image/png" sizes="192x192" href="{pre}img/icon-192.png">
+<link rel="apple-touch-icon" href="{pre}img/icon-180.png">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Manrope:wght@400;500;700;800&display=swap&subset=cyrillic,latin-ext" rel="stylesheet">
 <link rel="stylesheet" href="{pre}assets/style.css?v={VER}">
@@ -265,13 +286,12 @@ def page(lang):
 
 <section class="hero">
  <div class="wrap hero-text">
-  <p class="eyebrow">{e(t["eyebrow"])}</p>
-  <h1>{name}</h1>
+  <h1><span class="eyebrow">{e(t["eyebrow"])}</span><span class="h1-name">{name}</span></h1>
   {ORN}
   <p class="lead">{e(t["lead"])}</p>
   <div class="btns"><a class="btn light" href="#video">▶ {e(t["cta1"])}</a><a class="btn outline-light" href="#kontakt" data-open-form>{e(t["cta2"])}</a></div>
  </div>
- <figure class="hero-photo wrap"><img src="{pre}img/soubor-portret.jpg" alt="{e(t["photo_alt"])}" width="2048" height="1365" fetchpriority="high"></figure>
+ <figure class="hero-photo wrap"><img src="{pre}img/soubor-portret.jpg" srcset="{pre}img/soubor-portret-1200.jpg 1200w, {pre}img/soubor-portret.jpg 2048w" sizes="(max-width:1300px) 100vw, 1240px" alt="{e(t["photo_alt"])}" width="2048" height="1365" fetchpriority="high"></figure>
 </section>
 
 <section class="stats-sec"><div class="wrap">
@@ -380,9 +400,11 @@ for lang in LANGS:
     path = os.path.join(OUT, "" if lang == "cs" else lang, "index.html")
     os.makedirs(os.path.dirname(path), exist_ok=True)
     open(path, "w").write(page(lang))
+LASTMOD = datetime.date.today().isoformat()
+open(os.path.join(OUT, "404.html"), "w").write(f'''<!doctype html><html lang="cs"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Stránka nenalezena – Kupava</title><meta name="robots" content="noindex"><link rel="stylesheet" href="/assets/style.css?v={VER}"></head><body><section class="hero" style="padding:120px 0 140px"><div class="wrap hero-text"><h1><span class="eyebrow">404</span><span class="h1-name">Kupava</span></h1><p class="lead">Stránka nenalezena · Сторінку не знайдено · Page not found</p><div class="btns"><a class="btn light" href="/">Čeština</a><a class="btn outline-light" href="/uk/">Українська</a><a class="btn outline-light" href="/en/">English</a></div></div></section></body></html>''')
 open(os.path.join(OUT, "sitemap.xml"), "w").write(
  '<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">\n' +
- "".join(f'<url><loc>{BASE}{p}</loc>' + "".join(f'<xhtml:link rel="alternate" hreflang="{l2}" href="{BASE}{p2}"/>' for l2, p2 in LANGS.items()) + '</url>\n' for p in LANGS.values()) + '</urlset>\n')
+ "".join(f'<url><loc>{BASE}{p}</loc><lastmod>{LASTMOD}</lastmod>' + "".join(f'<xhtml:link rel="alternate" hreflang="{l2}" href="{BASE}{p2}"/>' for l2, p2 in LANGS.items()) + '</url>\n' for p in LANGS.values()) + '</urlset>\n')
 open(os.path.join(OUT, "robots.txt"), "w").write(f"User-agent: *\nAllow: /\nSitemap: {BASE}/sitemap.xml\n")
 open(os.path.join(OUT, "CNAME"), "w").write("kupavabrno.cz\n")
 print(f"ok – {N_PAST} minulých vystoupení, {len(HIGHLIGHTS)} významných, {len(UPCOMING)} připravovaných")
