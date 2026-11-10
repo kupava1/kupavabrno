@@ -42,6 +42,15 @@
     });
   }
 
+  // kopírování medailonku
+  document.querySelectorAll('[data-copy]').forEach(function(b){ b.addEventListener('click', function(){
+    var el=document.getElementById(b.getAttribute('data-copy')); if(!el) return;
+    var txt=el.textContent, label=b.textContent;
+    (navigator.clipboard ? navigator.clipboard.writeText(txt) : Promise.reject()).then(function(){ b.textContent=b.dataset.copied; setTimeout(function(){ b.textContent=label; },2000); }).catch(function(){});
+    track('press_bio_copy');
+  }); });
+  document.querySelectorAll('a[download]').forEach(function(a){ a.addEventListener('click', function(){ track('file_download',{file_name:a.getAttribute('href')}); }); });
+
   // kontaktní formulář – odeslání přímo z webu
   var form=document.getElementById('contact-form');
   if(form){

@@ -16,6 +16,34 @@ EVENTS = sorted(json.load(open(os.path.join(OUT, "data", "vystoupeni.json")))["e
 PAST = [ev for ev in EVENTS if ev["date"] < TODAY]
 UPCOMING = [ev for ev in EVENTS if ev["date"] >= TODAY]
 HIGHLIGHTS = [ev for ev in reversed(PAST) if ev.get("highlight")]
+POSTS = sorted(json.load(open(os.path.join(OUT, "data", "aktuality.json")))["posts"], key=lambda x: x["date"], reverse=True)
+def post_url(lang, slug): return LANGS[lang] + "aktuality/" + slug + "/"
+
+X = {
+ "cs": dict(nav_news="Aktuality", news_k="Aktuality", news_h="Z našeho dění", more="Číst dál", back="← Zpět na hlavní stránku", all_news="Další aktuality",
+            press_k="Pro média a pořadatele", press_h="Podklady ke stažení",
+            press_p="Fotografie ve vysokém rozlišení, logo a medailonek souboru pro programy festivalů, plakáty a tiskové zprávy. Při použití fotografií prosíme o uvedení zdroje „Soubor Kupava“.",
+            bio_h="Krátký medailonek", copy="Kopírovat text", copied="Zkopírováno",
+            dl_zip="Kompletní balíček (ZIP)", dl_logo="Logo (PNG)", dl_bio="Medailonky CZ / UA / EN (TXT)", dl_photos="Fotografie",
+            bio="Kupava je ukrajinský folklorní soubor z Brna, založený v únoru 2023. Věnuje se tradičnímu ukrajinskému vícehlasému zpěvu a lidové hudbě z různých regionů Ukrajiny – zpívá v originále, v krojích a za doprovodu živé hudby. Soubor vystoupil mimo jiné na MFF Strážnice, festivalu Smetanova Litomyšl, Chodských slavnostech a v přímém přenosu Koncertu pro život II na TV Noe. Umělecká vedoucí: Mgr. Kateryna Mykhaylova.",
+            foot_press="Pro média"),
+ "uk": dict(nav_news="Новини", news_k="Новини", news_h="Що в нас нового", more="Читати далі", back="← На головну сторінку", all_news="Інші новини",
+            press_k="Для медіа та організаторів", press_h="Матеріали для завантаження",
+            press_p="Фотографії у високій роздільній здатності, логотип і коротка довідка про ансамбль для фестивальних програм, афіш і пресрелізів. Використовуючи фото, просимо зазначати джерело «Ансамбль Купава».",
+            bio_h="Коротка довідка", copy="Копіювати текст", copied="Скопійовано",
+            dl_zip="Повний пакет (ZIP)", dl_logo="Логотип (PNG)", dl_bio="Довідки CZ / UA / EN (TXT)", dl_photos="Фотографії",
+            bio="«Купава» – український фольклорний ансамбль з Брно, заснований у лютому 2023 року. Ансамбль присвячує себе традиційному українському багатоголосому співу та народній музиці з різних регіонів України – співає в оригіналі, у народних строях, під живу музику. Виступав, зокрема, на МФФ у Стражніце, фестивалі Smetanova Litomyšl, Ходському святі та в прямому ефірі «Концерту для життя II» на TV Noe. Художня керівниця: Mgr. Катерина Михайлова.",
+            foot_press="Для медіа"),
+ "en": dict(nav_news="News", news_k="News", news_h="What’s new", more="Read more", back="← Back to the home page", all_news="More news",
+            press_k="For media and organisers", press_h="Press kit",
+            press_p="High-resolution photographs, logo and a short biography of the ensemble for festival programmes, posters and press releases. When using the photographs, please credit “Kupava ensemble”.",
+            bio_h="Short biography", copy="Copy text", copied="Copied",
+            dl_zip="Complete press kit (ZIP)", dl_logo="Logo (PNG)", dl_bio="Biographies CZ / UA / EN (TXT)", dl_photos="Photographs",
+            bio="Kupava is a Ukrainian folk ensemble from Brno, Czech Republic, founded in February 2023. It is dedicated to traditional Ukrainian polyphonic singing and folk music from many regions of Ukraine, performed in the original language, in traditional dress and with live music. The ensemble has performed at the Strážnice International Folklore Festival, Smetana’s Litomyšl, the Chod Festival and in the live TV Noe broadcast of Concert for Life II. Artistic director: Kateryna Mykhaylova.",
+            foot_press="Press kit"),
+}
+PRESS_PHOTOS = [("soubor-portret","Kupava – skupinový portrét / group portrait"),("program-vanoce","Staroukrajinské Vánoce / Old Ukrainian Christmas"),
+                ("program-regiony","Kupava na pódiu / on stage"),("koledy-moravske-namesti","Koledování v Brně / Carolling in Brno"),("festival-podium","Festivalové vystoupení / Festival performance")]
 N_PAST = len(PAST)
 
 MONTHS = {"cs": ["ledna","února","března","dubna","května","června","července","srpna","září","října","listopadu","prosince"],
@@ -228,7 +256,8 @@ def page(lang):
           {"@type":"WebSite","@id":BASE+"/#web","url":BASE+"/","name":"Kupava","inLanguage":["cs-CZ","uk-UA","en"],"publisher":{"@id":BASE+"/#kupava"}},
           {"@type":"WebPage","url":BASE+LANGS[lang],"name":t["title"],"description":t["desc"],"inLanguage":INLANG,"isPartOf":{"@id":BASE+"/#web"},"about":{"@id":BASE+"/#kupava"},
            "primaryImageOfPage":BASE+"/img/soubor-portret.jpg"}] + events}
-    nav = "".join(f'<a href="{h}">{e(n)}</a>' for h, n in t["nav"])
+    x = X[lang]
+    nav = "".join(f'<a href="{h}">{e(n)}</a>' for h, n in t["nav"][:3]) + f'<a href="#aktuality">{e(x["nav_news"])}</a>' + "".join(f'<a href="{h}">{e(n)}</a>' for h, n in t["nav"][3:])
     LBL = {"cs":"CZ","uk":"UA","en":"EN"}; CUR = ' aria-current="page"'
     langs = "".join('<a href="' + (pre + ("" if l=="cs" else l+"/") or "./") + f'" hreflang="{l}" lang="{l}"' + (CUR if l==lang else "") + f'>{LBL[l]}</a>' for l in LANGS)
     stats = "".join(f'<div><b>{e(a)}</b><span>{e(b)}</span></div>' for a, b in t["stats"])
@@ -341,6 +370,8 @@ def page(lang):
  </div>
 </div></section>
 
+{news_section(lang, pre)}
+
 <section id="video"><div class="wrap">
  <div class="sec-head"><div><p class="kicker">{e(t["vid_k"])}</p><h2>{e(t["vid_h"])}</h2></div><a class="link" href="https://www.youtube.com/watch?v=qvbnvvhpYXQ&amp;list=PLs8RLUolQE94t0YRGZ3u8ZIh3bfrB9ls5" target="_blank" rel="noopener">{e(t["vid_more"])} ↗</a></div>
  <div class="videos">{vids}</div>
@@ -351,6 +382,8 @@ def page(lang):
  <h2>{e(t["gal_h"])}</h2>
  <div class="gallery">{gal}</div>
 </div></section>
+
+{press_section(lang, pre)}
 
 <section id="kontakt" class="contact"><div class="wrap contact-grid">
  <div>
@@ -397,6 +430,124 @@ def page(lang):
 </html>
 '''
 
+def fmt_post_date(d, lang):
+    y, m, dd = map(int, d.split("-"))
+    return f"{dd}. {MONTHS[lang][m-1]} {y}" if lang == "cs" else f"{dd} {MONTHS[lang][m-1]} {y}"
+
+def news_section(lang, pre):
+    x = X[lang]
+    cards = "".join(f'''<article class="news-card"><a href="aktuality/{po['slug']}/"><img src="{pre}img/g/{po['image']}.jpg" alt="" loading="lazy" width="760" height="506"></a><div><time datetime="{po.get('event_date', po['date'])}">{e(fmt_post_date(po.get('event_date', po['date']), lang))}</time><h3><a href="aktuality/{po['slug']}/">{e(po[lang]['title'])}</a></h3><p>{e(po[lang]['perex'])}</p><a class="link" href="aktuality/{po['slug']}/">{e(x['more'])} →</a></div></article>''' for po in POSTS[:3])
+    return f'''<section id="aktuality"><div class="wrap">
+ <p class="kicker">{e(x["news_k"])}</p>
+ <h2>{e(x["news_h"])}</h2>
+ <div class="news">{cards}</div>
+</div></section>'''
+
+def press_section(lang, pre):
+    x = X[lang]
+    photos = "".join(f'<li><a href="{pre}img/{f}.jpg" download>{e(c)}</a></li>' for f, c in PRESS_PHOTOS)
+    return f'''<section id="pro-media" class="soft"><div class="wrap press">
+ <div>
+  <p class="kicker">{e(x["press_k"])}</p>
+  <h2>{e(x["press_h"])}</h2>
+  <p>{e(x["press_p"])}</p>
+  <ul class="dl">
+   <li><a class="btn primary" href="{pre}press/kupava-press-kit.zip" download>⬇ {e(x["dl_zip"])}</a></li>
+   <li><a href="{pre}img/logo.png" download>{e(x["dl_logo"])}</a></li>
+   <li><a href="{pre}press/kupava-medailonky.txt" download>{e(x["dl_bio"])}</a></li>
+  </ul>
+  <p class="dl-h">{e(x["dl_photos"])}</p>
+  <ul class="dl small">{photos}</ul>
+ </div>
+ <div class="bio-box">
+  <h3>{e(x["bio_h"])}</h3>
+  <p id="bio-{lang}">{e(x["bio"])}</p>
+  <button class="btn small outline" type="button" data-copy="bio-{lang}" data-copied="{e(x["copied"])}">{e(x["copy"])}</button>
+ </div>
+</div></section>'''
+
+def article(lang, po):
+    t = T[lang]; x = X[lang]; P = po[lang]
+    depth = 2 if lang == "cs" else 3
+    pre = "../" * depth
+    name = "Купава" if lang == "uk" else "Kupava"
+    url = BASE + post_url(lang, po["slug"])
+    alts = "\n".join(f'<link rel="alternate" hreflang="{l}" href="{BASE}{post_url(l, po["slug"])}">' for l in LANGS)
+    LBL = {"cs":"CZ","uk":"UA","en":"EN"}; CUR = ' aria-current="page"'
+    langs = "".join(f'<a href="{pre}{post_url(l, po["slug"]).lstrip("/")}" hreflang="{l}" lang="{l}"' + (CUR if l==lang else "") + f'>{LBL[l]}</a>' for l in LANGS)
+    home = pre + ("" if lang == "cs" else lang + "/")
+    body = "".join(f"<p>{e(par)}</p>" for par in P["body"])
+    others = "".join(f'<li><a href="{pre}{post_url(lang, o["slug"]).lstrip("/")}">{e(o[lang]["title"])}</a></li>' for o in POSTS if o["slug"] != po["slug"])[:2000]
+    ld = {"@context":"https://schema.org","@type":"NewsArticle","headline":P["title"],"description":P["perex"],"datePublished":po["date"],"dateModified":po["date"],
+          "inLanguage":{"cs":"cs-CZ","uk":"uk-UA","en":"en"}[lang],"image":[BASE+"/img/"+po["image"]+".jpg"],"mainEntityOfPage":url,
+          "author":{"@type":"Organization","name":"Kupava","url":BASE+"/"},"publisher":{"@type":"Organization","name":"Ukrajinský folklorní soubor KUPAVA, z.s.","logo":{"@type":"ImageObject","url":BASE+"/img/logo.png"}}}
+    return f'''<!doctype html>
+<html lang="{lang}">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>{e(P["title"])} – {name}</title>
+<meta name="description" content="{e(P["perex"])}">
+<meta name="theme-color" content="#1c2f5a">
+<link rel="canonical" href="{url}">
+{alts}
+<meta property="og:type" content="article">
+<meta property="og:title" content="{e(P["title"])}">
+<meta property="og:description" content="{e(P["perex"])}">
+<meta property="og:image" content="{BASE}/img/{po["image"]}.jpg">
+<meta property="og:url" content="{url}">
+<meta property="og:site_name" content="Kupava">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" type="image/png" sizes="192x192" href="{pre}img/icon-192.png">
+<link rel="apple-touch-icon" href="{pre}img/icon-180.png">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Manrope:wght@400;500;700;800&display=swap&subset=cyrillic,latin-ext" rel="stylesheet">
+<link rel="stylesheet" href="{pre}assets/style.css?v={VER}">
+<script type="application/ld+json">{json.dumps(ld, ensure_ascii=False)}</script>
+<!-- GOOGLE-TAG -->
+</head>
+<body class="article-page">
+<header class="top"><div class="wrap">
+ <a class="brand" href="{home}"><img src="{pre}img/logo.png" alt="" width="42" height="42"><span><b>{name}</b><small>{e(t["brand_sub"])}</small></span></a>
+ <nav class="nav nav-simple"><a href="{home}#aktuality">{e(x["nav_news"])}</a><span class="lang">{langs}</span><a class="btn small primary" href="{home}#kontakt">{e(t["nav_cta"])}</a></nav>
+</div></header>
+<article class="post">
+ <div class="wrap post-head">
+  <p class="kicker">{e(x["news_k"])} · <time datetime="{po.get("event_date", po["date"])}">{e(fmt_post_date(po.get("event_date", po["date"]), lang))}</time></p>
+  <h1>{e(P["title"])}</h1>
+  <p class="lead">{e(P["perex"])}</p>
+ </div>
+ <figure class="wrap post-img"><img src="{pre}img/{po["image"]}.jpg" alt="{e(P["title"])}" width="2048" height="1365"></figure>
+ <div class="wrap post-body">{body}
+  <p class="post-cta"><a class="btn primary" href="{home}#kontakt">{e(t["nav_cta"])}</a> <a class="btn outline" href="{home}">{e(x["back"])}</a></p>
+  <h2 class="others-h">{e(x["all_news"])}</h2><ul class="others">{others}</ul>
+ </div>
+</article>
+<footer><div class="wrap foot">
+ <div><b>Ukrajinský folklorní soubor KUPAVA, z.s.</b><br>{e(t["foot_seat"])}<br>{e(t["foot_reg"])}</div>
+ <div class="lang">{langs}</div>
+</div></footer>
+</body>
+</html>
+'''
+
+for lang in LANGS:
+    for po in POSTS:
+        ap = os.path.join(OUT, post_url(lang, po["slug"]).lstrip("/"), "index.html")
+        os.makedirs(os.path.dirname(ap), exist_ok=True)
+        open(ap, "w").write(article(lang, po))
+
+# press kit: bios txt + zip
+import zipfile
+os.makedirs(os.path.join(OUT, "press"), exist_ok=True)
+bios = "\n\n".join(f"[{l.upper()}]\n{X[l]['bio']}" for l in LANGS)
+open(os.path.join(OUT, "press", "kupava-medailonky.txt"), "w").write(bios + "\n\nKontakt: kupava@kupavabrno.cz · +420 777 072 433 · https://kupavabrno.cz\n")
+with zipfile.ZipFile(os.path.join(OUT, "press", "kupava-press-kit.zip"), "w", zipfile.ZIP_STORED) as z:
+    z.write(os.path.join(OUT, "press", "kupava-medailonky.txt"), "kupava-medailonky.txt")
+    z.write(os.path.join(OUT, "img", "logo.png"), "kupava-logo.png")
+    for f, c in PRESS_PHOTOS:
+        z.write(os.path.join(OUT, "img", f + ".jpg"), "foto/kupava-" + f + ".jpg")
+
 for lang in LANGS:
     path = os.path.join(OUT, "" if lang == "cs" else lang, "index.html")
     os.makedirs(os.path.dirname(path), exist_ok=True)
@@ -405,7 +556,7 @@ LASTMOD = datetime.date.today().isoformat()
 open(os.path.join(OUT, "404.html"), "w").write(f'''<!doctype html><html lang="cs"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Stránka nenalezena – Kupava</title><meta name="robots" content="noindex"><link rel="stylesheet" href="/assets/style.css?v={VER}"></head><body><section class="hero" style="padding:120px 0 140px"><div class="wrap hero-text"><h1><span class="eyebrow">404</span><span class="h1-name">Kupava</span></h1><p class="lead">Stránka nenalezena · Сторінку не знайдено · Page not found</p><div class="btns"><a class="btn light" href="/">Čeština</a><a class="btn outline-light" href="/uk/">Українська</a><a class="btn outline-light" href="/en/">English</a></div></div></section></body></html>''')
 open(os.path.join(OUT, "sitemap.xml"), "w").write(
  '<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">\n' +
- "".join(f'<url><loc>{BASE}{p}</loc><lastmod>{LASTMOD}</lastmod>' + "".join(f'<xhtml:link rel="alternate" hreflang="{l2}" href="{BASE}{p2}"/>' for l2, p2 in LANGS.items()) + '</url>\n' for p in LANGS.values()) + '</urlset>\n')
+ "".join(f'<url><loc>{BASE}{p}</loc><lastmod>{LASTMOD}</lastmod>' + "".join(f'<xhtml:link rel="alternate" hreflang="{l2}" href="{BASE}{p2}"/>' for l2, p2 in LANGS.items()) + '</url>\n' for p in LANGS.values()) + "".join(f'<url><loc>{BASE}{post_url(l, po["slug"])}</loc><lastmod>{po["date"]}</lastmod>' + "".join(f'<xhtml:link rel="alternate" hreflang="{l2}" href="{BASE}{post_url(l2, po["slug"])}"/>' for l2 in LANGS) + '</url>\n' for po in POSTS for l in LANGS) + '</urlset>\n')
 open(os.path.join(OUT, "robots.txt"), "w").write(f"User-agent: *\nAllow: /\nSitemap: {BASE}/sitemap.xml\n")
 open(os.path.join(OUT, "CNAME"), "w").write("kupavabrno.cz\n")
 print(f"ok – {N_PAST} minulých vystoupení, {len(HIGHLIGHTS)} významných, {len(UPCOMING)} připravovaných")
