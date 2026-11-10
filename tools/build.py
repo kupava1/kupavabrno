@@ -568,7 +568,7 @@ def archive(lang):
 <section class="post"><div class="wrap">
  <p class="kicker">{e(x["news_k"])}</p>
  <h1>{e(x["news_h"])}</h1>
- <div class="news news-arch">{cards}</div>
+ <div class="news news4 news-arch">{cards}</div>
  <p class="post-cta"><a class="btn outline" href="{home}">{e(x["back"])}</a></p>
 </div></section>
 <footer><div class="wrap foot">
