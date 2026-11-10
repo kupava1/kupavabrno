@@ -6,7 +6,7 @@ import json, os, sys, html, time, datetime
 
 OUT = sys.argv[1] if len(sys.argv) > 1 else os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 BASE = "https://kupavabrno.cz"
-VER = time.strftime("%Y%m%d%H%M")
+VER = time.strftime("%Y%m%d%H%M%S")
 LANGS = {"cs": "/", "uk": "/uk/", "en": "/en/"}
 FORM_ENDPOINT = "https://formsubmit.co/ajax/kupava@kupavabrno.cz"
 e = html.escape
@@ -54,7 +54,8 @@ VIDEOS = [
 
 GALLERY = [
  ("soubor-prerov", {"cs":"Kupava v Přerově","uk":"«Купава» у Пршерові","en":"Kupava in Přerov"}),
- ("koledy-sv-josef", {"cs":"Staroukrajinské Vánoce v kostele sv. Josefa","uk":"Староукраїнське Різдво в храмі св. Йосифа","en":"Old Ukrainian Christmas at St Joseph’s Church"}),
+ ("koledy-podium-kostel", {"cs":"Staroukrajinské Vánoce","uk":"Староукраїнське Різдво","en":"Old Ukrainian Christmas"}),
+ ("koledy-moravske-namesti", {"cs":"Vánoční koledování v Brně","uk":"Різдвяне колядування в Брно","en":"Christmas carolling in Brno"}),
  ("housle-podium", {"cs":"Živá hudba na pódiu","uk":"Жива музика на сцені","en":"Live music on stage"}),
  ("vinok-portret", {"cs":"Zpěvačka ve věnci","uk":"Співачка у вінку","en":"Singer wearing a floral wreath"}),
  ("zpev-radost", {"cs":"Vícehlasý zpěv","uk":"Багатоголосий спів","en":"Polyphonic singing"}),
@@ -96,8 +97,8 @@ T = {
   tv_p="V dubnu 2025 vystoupila Kupava v Ostravě v přímém přenosu benefičního Koncertu pro život II na podporu Ukrajiny, který vysílala TV Noe. Na jednom pódiu spolu s Pavlem Helanem, kapelou Sonjašnyk se smyčcovým kvartetem a dětským sborem Spivanočky.",
   tv_meta="6. dubna 2025 · Ostrava · TV Noe",
   rep_k="Repertoár", rep_h="Koncertní programy",
-  progs=[("koledy-sv-josef","Staroukrajinské Vánoce","Koledy a ščedrivky s vánoční hvězdou. Sváteční program, který každoročně uvádíme v Brně a ve Vídni."),
-         ("festival-podium","Písně ukrajinských regionů","Lyrické, obřadní a taneční písně v autentickém vícehlasu s živou hudbou – pro festivaly, koncertní sály a kulturní události.")],
+  progs=[("program-vanoce","Staroukrajinské Vánoce","Koledy a ščedrivky s vánoční hvězdou. Sváteční program, který každoročně uvádíme v Brně a ve Vídni."),
+         ("program-regiony","Písně ukrajinských regionů","Lyrické, obřadní a taneční písně v autentickém vícehlasu s živou hudbou – pro festivaly, koncertní sály a kulturní události.")],
   rep_list="Z repertoáru", rep_note="Písně zpíváme v ukrajinštině; uvádíme český překlad názvu.",
   perf_k="Vystoupení", perf_h="Významná vystoupení", up_k="Připravujeme",
   perf_note=f"Celkem {N_PAST} vystoupení od roku 2023 – festivaly, koncerty a komunitní akce v Česku, na Slovensku a v Rakousku.",
@@ -141,8 +142,8 @@ T = {
   tv_p="У квітні 2025 року «Купава» виступила в Остраві в прямому ефірі благодійного «Концерту для життя II» на підтримку України, який транслювало TV Noe. На одній сцені з Павлом Геланом, гуртом «Соняшник» зі струнним квартетом і дитячим хором «Співаночки».",
   tv_meta="6 квітня 2025 · Острава · TV Noe",
   rep_k="Репертуар", rep_h="Концертні програми",
-  progs=[("koledy-sv-josef","Староукраїнське Різдво","Колядки й щедрівки з різдвяною зіркою. Святкова програма, яку ми щороку представляємо в Брно та Відні."),
-         ("festival-podium","Пісні українських регіонів","Ліричні, обрядові й танцювальні пісні в автентичному багатоголоссі з живою музикою – для фестивалів, концертних залів і культурних подій.")],
+  progs=[("program-vanoce","Староукраїнське Різдво","Колядки й щедрівки з різдвяною зіркою. Святкова програма, яку ми щороку представляємо в Брно та Відні."),
+         ("program-regiony","Пісні українських регіонів","Ліричні, обрядові й танцювальні пісні в автентичному багатоголоссі з живою музикою – для фестивалів, концертних залів і культурних подій.")],
   rep_list="З репертуару", rep_note="Ми співаємо українською, в оригінальному звучанні.",
   perf_k="Виступи", perf_h="Визначні виступи", up_k="Найближчі виступи",
   perf_note=f"Загалом {N_PAST} виступів з 2023 року – фестивалі, концерти й громадські події в Чехії, Словаччині та Австрії.",
@@ -186,8 +187,8 @@ T = {
   tv_p="In April 2025 Kupava performed in Ostrava in the live broadcast of the charity Concert for Life II in support of Ukraine, aired by TV Noe – sharing the stage with Pavel Helan, the band Sonjašnyk with a string quartet, and the Spivanočky children’s choir.",
   tv_meta="6 April 2025 · Ostrava · TV Noe",
   rep_k="Repertoire", rep_h="Concert programmes",
-  progs=[("koledy-sv-josef","Old Ukrainian Christmas","Carols and shchedrivky with the Christmas star – a festive programme we present every year in Brno and Vienna."),
-         ("festival-podium","Songs of Ukraine’s Regions","Lyrical, ritual and dance songs in authentic polyphony with live music – for festivals, concert halls and cultural events.")],
+  progs=[("program-vanoce","Old Ukrainian Christmas","Carols and shchedrivky with the Christmas star – a festive programme we present every year in Brno and Vienna."),
+         ("program-regiony","Songs of Ukraine’s Regions","Lyrical, ritual and dance songs in authentic polyphony with live music – for festivals, concert halls and cultural events.")],
   rep_list="From our repertoire", rep_note="We sing in Ukrainian; English translations of the titles are given.",
   perf_k="Performances", perf_h="Selected performances", up_k="Upcoming",
   perf_note=f"{N_PAST} performances since 2023 in total – festivals, concerts and community events in Czechia, Slovakia and Austria.",

@@ -115,7 +115,7 @@ h3{font-family:var(--serif);font-weight:600;font-size:26px;line-height:1.2;margi
 .rep{display:grid;grid-template-columns:2fr 1fr;gap:48px;align-items:start}
 .progs{display:grid;grid-template-columns:1fr 1fr;gap:24px}
 .prog{background:#fff;border:1px solid var(--line);border-radius:8px;overflow:hidden}
-.prog img{aspect-ratio:3/2;object-fit:cover;width:100%}
+.prog img{aspect-ratio:3/2;object-fit:cover;width:100%;height:auto}
 .prog div{padding:22px 24px 26px}
 .prog p{margin:6px 0 0;color:var(--ink-soft);font-size:16px}
 .songs h3{font-family:var(--sans);font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:var(--poppy);font-weight:800}
