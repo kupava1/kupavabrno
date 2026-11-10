@@ -306,3 +306,83 @@ footer .cookie-link{color:rgba(255,255,255,.65);text-decoration:underline;font-s
 .news-arch{margin-top:12px}
 @media (max-width:1020px){.news.news4{grid-template-columns:repeat(2,1fr)}}
 @media (max-width:640px){.news.news4{grid-template-columns:1fr}}
+
+/* ===== v3 – grafická revize (11/2026): karty vystoupení, bloky repertoáru, výšivkový motiv ===== */
+:root{--radius:12px;--shadow:0 1px 2px rgba(28,47,90,.05),0 12px 32px -16px rgba(28,47,90,.28)}
+.kicker{display:flex;align-items:center;gap:10px}
+.kicker:before{content:"";width:7px;height:7px;background:currentColor;transform:rotate(45deg);flex-shrink:0}
+.hero-text .kicker:before,.post .kicker:before{display:none}
+
+/* výšivkový pás – geometrický motiv inspirovaný ukrajinskou výšivkou */
+.tv,.contact{position:relative}
+.tv:before,.contact:before{content:"";position:absolute;left:0;right:0;top:0;height:14px;opacity:.9;
+ background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='28' height='14' viewBox='0 0 28 14'%3E%3Cpath d='M14 1l6 6-6 6-6-6z' fill='%23c0392b'/%3E%3Cpath d='M14 4.5l2.5 2.5-2.5 2.5-2.5-2.5z' fill='%231c2f5a'/%3E%3Cpath d='M0 7l3-3 3 3-3 3zM22 7l3-3 3 3-3 3z' fill='%23d9a441'/%3E%3C/svg%3E") repeat-x left center/28px 14px;
+ border-bottom:1px solid rgba(255,255,255,.08)}
+.stats-sec{position:relative}
+
+/* jednotné karty */
+.pillar,.prog,.news-card,.bio-box,.feat{border-radius:var(--radius);box-shadow:var(--shadow);border-color:transparent}
+.pillar{border-top-width:4px}
+.news-card,.feat,.prog{transition:transform .25s ease,box-shadow .25s ease}
+.news-card:hover,.feat:hover,.prog:hover{transform:translateY(-3px);box-shadow:0 2px 4px rgba(28,47,90,.06),0 22px 40px -18px rgba(28,47,90,.35)}
+.gallery a,.about-pic img,.tv-pic img,.hero-photo img,.post-img img{border-radius:var(--radius)}
+
+/* repertoár – programy */
+#repertoar h2{margin-bottom:34px}
+.progs{display:grid;grid-template-columns:1fr 1fr;gap:28px}
+.prog{background:#fff;overflow:hidden;display:flex;flex-direction:column}
+.prog-img{overflow:hidden}
+.prog-img img{aspect-ratio:16/10;object-fit:cover;width:100%;height:auto;transition:transform .6s}
+.prog:hover .prog-img img{transform:scale(1.03)}
+.prog-body{padding:26px 30px 30px;position:relative}
+.prog-n{position:absolute;right:26px;top:18px;font-family:var(--serif);font-size:44px;line-height:1;color:var(--wheat);opacity:.55}
+.prog h3{font-size:30px;padding-right:56px}
+.prog-body p{margin:8px 0 0;color:var(--ink-soft);font-size:16.5px;max-width:52ch}
+
+/* repertoár – písně */
+.songs{margin-top:40px;background:#fff;border-radius:var(--radius);box-shadow:var(--shadow);padding:34px 36px 26px;border-top:4px solid var(--poppy)}
+.songs-head{display:flex;justify-content:space-between;align-items:baseline;gap:20px;flex-wrap:wrap;margin-bottom:8px}
+.songs-head h3{margin:0}
+.songs-head p{margin:0;font-size:14px;color:var(--ink-soft)}
+ol.song-grid{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(3,1fr);column-gap:36px}
+.song-grid li{display:grid;grid-template-columns:34px 1fr;column-gap:10px;padding:14px 0;border-bottom:1px solid var(--line);align-content:start}
+.song-grid .sn{grid-row:span 2;font-family:var(--serif);font-size:20px;color:var(--poppy);line-height:1.25}
+.song-grid b{font-family:var(--serif);font-size:20.5px;font-weight:600;line-height:1.25;color:var(--navy)}
+.song-grid small{grid-column:2;font-size:14px;color:var(--ink-soft);line-height:1.4;margin-top:2px}
+.songs-more{margin:18px 0 0}
+
+/* vystoupení */
+#vystoupeni .sec-head{align-items:end;margin-bottom:30px}
+#vystoupeni .perf-note{max-width:42ch;margin:0;font-size:15.5px}
+.upcoming{display:flex;align-items:center;gap:28px;flex-wrap:wrap;border-radius:var(--radius);padding:20px 28px;margin:0 0 28px;box-shadow:var(--shadow)}
+.upcoming .kicker{margin:0}
+.upcoming ul{flex:1}
+.feats{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.feat{background:#fff;overflow:hidden;display:flex;flex-direction:column}
+.feat-img{overflow:hidden}
+.feat-img img{aspect-ratio:3/2;object-fit:cover;width:100%;height:auto;transition:transform .6s}
+.feat:hover .feat-img img{transform:scale(1.04)}
+.feat-body{padding:18px 22px 22px}
+.feat time{display:block;font-size:12.5px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:var(--poppy)}
+.feat h3{font-size:23px;margin:6px 0 4px}
+.feat p{margin:0;font-size:15px;color:var(--ink-soft)}
+#vystoupeni .perf-grid{margin-top:56px}
+.sub-h{font-family:var(--sans);font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:var(--ink-soft);font-weight:800;margin:0 0 6px}
+ul.hl li:last-child{border-bottom:0}
+
+@media (max-width:1020px){
+ .progs{grid-template-columns:1fr}
+ ol.song-grid{grid-template-columns:1fr 1fr}
+ .feats{grid-template-columns:1fr 1fr}
+}
+@media (max-width:640px){
+ ol.song-grid,.feats{grid-template-columns:1fr}
+ .songs{padding:26px 20px 18px}
+ .prog-body{padding:22px 22px 24px}
+ .prog h3{font-size:26px}
+ .upcoming{padding:18px 20px}
+}
+.prog .prog-img{padding:0}
+.prog .prog-body{padding:26px 30px 30px}
+@media (max-width:640px){.prog .prog-body{padding:22px 22px 24px}}
+@media (max-width:640px){.upcoming{flex-direction:column;align-items:flex-start;gap:8px}}

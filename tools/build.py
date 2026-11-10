@@ -26,21 +26,21 @@ X = {
             bio_h="Krátký medailonek", copy="Kopírovat text", copied="Zkopírováno",
             dl_zip="Kompletní balíček (ZIP)", dl_logo="Logo (PNG)", dl_bio="Medailonky CZ / UA / EN (TXT)", dl_photos="Fotografie",
             bio="Kupava je ukrajinský folklorní soubor z Brna, založený v únoru 2023. Věnuje se tradičnímu ukrajinskému vícehlasému zpěvu a lidové hudbě z různých regionů Ukrajiny – zpívá v originále, v krojích a za doprovodu živé hudby. Soubor vystoupil mimo jiné na MFF Strážnice, festivalu Smetanova Litomyšl, Chodských slavnostech a v přímém přenosu Koncertu pro život II na TV Noe. Umělecká vedoucí: Mgr. Kateryna Mykhaylova.",
-            foot_press="Pro média"),
+            foot_press="Pro média", other_perf="Další vystoupení"),
  "uk": dict(nav_news="Новини", news_k="Новини", news_h="Що в нас нового", more="Читати далі", back="← На головну сторінку", all_news="Інші новини", all_btn="Усі новини", arch_desc="Новини українського фольклорного ансамблю «Купава» з Брно – виступи, фестивалі та концерти.",
             press_k="Для медіа та організаторів", press_h="Матеріали для завантаження",
             press_p="Фотографії у високій роздільній здатності, логотип і коротка довідка про ансамбль для фестивальних програм, афіш і пресрелізів. Використовуючи фото, просимо зазначати джерело «Ансамбль Купава».",
             bio_h="Коротка довідка", copy="Копіювати текст", copied="Скопійовано",
             dl_zip="Повний пакет (ZIP)", dl_logo="Логотип (PNG)", dl_bio="Довідки CZ / UA / EN (TXT)", dl_photos="Фотографії",
             bio="«Купава» – український фольклорний ансамбль з Брно, заснований у лютому 2023 року. Ансамбль присвячує себе традиційному українському багатоголосому співу та народній музиці з різних регіонів України – співає в оригіналі, у народних строях, під живу музику. Виступав, зокрема, на МФФ у Стражніце, фестивалі Smetanova Litomyšl, Ходському святі та в прямому ефірі «Концерту для життя II» на TV Noe. Художня керівниця: Mgr. Катерина Михайлова.",
-            foot_press="Для медіа"),
+            foot_press="Для медіа", other_perf="Інші виступи"),
  "en": dict(nav_news="News", news_k="News", news_h="What’s new", more="Read more", back="← Back to the home page", all_news="More news", all_btn="All news", arch_desc="News from Kupava, the Ukrainian folk ensemble from Brno – performances, festivals and concerts.",
             press_k="For media and organisers", press_h="Press kit",
             press_p="High-resolution photographs, logo and a short biography of the ensemble for festival programmes, posters and press releases. When using the photographs, please credit “Kupava ensemble”.",
             bio_h="Short biography", copy="Copy text", copied="Copied",
             dl_zip="Complete press kit (ZIP)", dl_logo="Logo (PNG)", dl_bio="Biographies CZ / UA / EN (TXT)", dl_photos="Photographs",
             bio="Kupava is a Ukrainian folk ensemble from Brno, Czech Republic, founded in February 2023. It is dedicated to traditional Ukrainian polyphonic singing and folk music from many regions of Ukraine, performed in the original language, in traditional dress and with live music. The ensemble has performed at the Strážnice International Folklore Festival, Smetana’s Litomyšl, the Chod Festival and in the live TV Noe broadcast of Concert for Life II. Artistic director: Kateryna Mykhaylova.",
-            foot_press="Press kit"),
+            foot_press="Press kit", other_perf="Other performances"),
 }
 PRESS_PHOTOS = [("soubor-portret","Kupava – skupinový portrét / group portrait"),("vanoce-viden-2023","Staroukrajinské Vánoce / Old Ukrainian Christmas"),
                 ("program-regiony","Kupava na pódiu / on stage"),("koledy-moravske-namesti","Koledování v Brně / Carolling in Brno"),("festival-podium","Festivalové vystoupení / Festival performance")]
@@ -73,6 +73,16 @@ REPERTOIRE = [
  ("Ой чи є, чи нема пан господар дома?", "Je-li, či není hospodář doma?", "Is the Master at Home?"),
  ("Хай Ісус, мале дитя", "Ať Ježíšek, malé dítě", "May Little Jesus"),
 ]
+
+# Významná vystoupení s vlastní fotografií z dané akce (klíč = název akce v češtině, fotka v img/g/)
+FEATURED_IMG = {
+ "Mezinárodní folklorní festival Strážnice": "soubor-straznice",
+ "Koncert pro život II – přímý přenos TV Noe": "vinky",
+ "Staroukrajinské Vánoce v kostele sv. Josefa": "koledy-sv-josef",
+ "Koleda ve Vídni": "viden-hvezda-2025",
+ "Mezinárodní folklorní festival Lidový rok": "lidovy-rok-2026",
+ "Vánoční koncert": "palac-slechticen-2024",
+}
 
 VIDEOS = [
  ("a9-As9ocu7A", "Ой, устану ранесенько", {"cs":"Babylonfest, Brno 2023","uk":"Babylonfest, Брно 2023","en":"Babylonfest, Brno 2023"}),
@@ -263,12 +273,22 @@ def page(lang):
     stages = "".join(f'<li>{e(s)}</li>' for s in t["stages"])
     about = "".join(f"<p>{p}</p>" for p in t["about_p"])
     pillars = "".join(f'<div class="pillar"><span class="num">0{i+1}</span><h3>{e(h)}</h3><p>{e(p)}</p></div>' for i, (h, p) in enumerate(t["pillars"]))
-    progs = "".join(f'<article class="prog"><img src="{pre}img/g/{img}.jpg" alt="{e(h)}" loading="lazy" width="760" height="506"><div><h3>{e(h)}</h3><p>{e(p)}</p></div></article>' for img, h, p in t["progs"])
-    if lang == "uk":
-        rep = "".join(f'<li><b>{e(o)}</b></li>' for o, c, en in REPERTOIRE)
-    else:
-        rep = "".join(f'<li><b>{e(c if lang=="cs" else en)}</b><span lang="uk">{e(o)}</span></li>' for o, c, en in REPERTOIRE)
-    hl = "".join(f'<li><time>{e(fdate(ev, lang))}</time><b>{e(ev[lang])}</b><span>{e(ev["place"][lang])}</span></li>' for ev in HIGHLIGHTS)
+    progs = "".join(f'<article class="prog"><div class="prog-img"><img src="{pre}img/g/{img}.jpg" alt="{e(h)}" loading="lazy" width="760" height="506"></div><div class="prog-body"><span class="prog-n">0{i+1}</span><h3>{e(h)}</h3><p>{e(p)}</p></div></article>' for i, (img, h, p) in enumerate(t["progs"]))
+    rep = "".join(f'<li><span class="sn">{i+1:02d}</span><b lang="uk">{e(o)}</b>' + ('' if lang == "uk" else f'<small>{e(c if lang=="cs" else en)}</small>') + '</li>' for i, (o, c, en) in enumerate(REPERTOIRE))
+    # významná vystoupení: karty s fotkou (stejnojmenné akce sloučené, např. Strážnice 2023 a 2025) + zbytek v seznamu
+    groups = {}
+    for ev in HIGHLIGHTS:
+        groups.setdefault(ev["cs"], []).append(ev)
+    feat, rest = [], []
+    for name_cs, evs in groups.items():
+        (feat if name_cs in FEATURED_IMG else rest).append((name_cs, evs))
+    def when(evs):
+        if len(evs) > 1:
+            ys = sorted({ev["date"][:4] for ev in evs})
+            return (" a " if lang == "cs" else " і " if lang == "uk" else " and ").join(ys)
+        return fdate(evs[0], lang)
+    cards = "".join(f'<article class="feat"><div class="feat-img"><img src="{pre}img/g/{FEATURED_IMG[n]}.jpg" alt="{e(evs[0][lang])}" loading="lazy" width="760" height="506"></div><div class="feat-body"><time>{e(when(evs))}</time><h3>{e(evs[0][lang])}</h3><p>{e(evs[0]["place"][lang])}</p></div></article>' for n, evs in feat)
+    hl = "".join(f'<li><time>{e(when(evs))}</time><b>{e(evs[0][lang])}</b><span>{e(evs[0]["place"][lang])}</span></li>' for n, evs in rest)
     up = ""
     if UPCOMING:
         up = f'<div class="upcoming"><p class="kicker">{e(t["up_k"])}</p><ul>' + "".join(f'<li><time>{e(fdate(ev, lang))}</time><b>{e(ev[lang])}</b><span>{e(ev["place"][lang])}</span></li>' for ev in UPCOMING) + '</ul></div>'
@@ -354,17 +374,20 @@ def page(lang):
 <section id="repertoar"><div class="wrap">
  <p class="kicker">{e(t["rep_k"])}</p>
  <h2>{e(t["rep_h"])}</h2>
- <div class="rep">
-  <div class="progs">{progs}</div>
-  <aside class="songs"><h3>{e(t["rep_list"])}</h3><ul>{rep}</ul><p>{e(t["rep_note"])}</p></aside>
+ <div class="progs">{progs}</div>
+ <div class="songs">
+  <div class="songs-head"><h3>{e(t["rep_list"])}</h3><p>{e(t["rep_note"])}</p></div>
+  <ol class="song-grid">{rep}</ol>
+  <p class="songs-more"><a class="link" href="#video">▶ {e(t["vid_h"])}</a></p>
  </div>
 </div></section>
 
 <section id="vystoupeni" class="soft"><div class="wrap">
- <p class="kicker">{e(t["perf_k"])}</p>
- <h2>{e(t["perf_h"])}</h2>
+ <div class="sec-head"><div><p class="kicker">{e(t["perf_k"])}</p><h2>{e(t["perf_h"])}</h2></div><p class="perf-note">{e(t["perf_note"])}</p></div>
+ {up}
+ <div class="feats">{cards}</div>
  <div class="perf-grid">
-  <div>{up}<ul class="hl">{hl}</ul><p class="perf-note">{e(t["perf_note"])}</p></div>
+  <div><h3 class="sub-h">{e(X[lang]["other_perf"])}</h3><ul class="hl">{hl}</ul></div>
   <blockquote>{e(t["quote"])}<cite><a href="https://www.ceskenoviny.cz/zpravy/2616128" target="_blank" rel="noopener">{e(t["quote_src"])}</a></cite></blockquote>
  </div>
 </div></section>
