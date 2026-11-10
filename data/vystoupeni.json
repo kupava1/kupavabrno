@@ -1,0 +1,542 @@
+{
+ "_zdroj": "Tabulka 'KUPAVA - Účast na akcích.xlsx' (sdílený disk Kupava) + události na facebook.com/KupavaBrno. Zrušené akce a soukromé akce se na web neuvádějí.",
+ "_aktualizovano": "2026-11-10",
+ "events": [
+  {
+   "date": "2023-03-25",
+   "cs": "Sousedské setkání",
+   "uk": "Сусідська зустріч",
+   "en": "Neighbourhood gathering",
+   "place": {
+    "cs": "Veverské Knínice",
+    "uk": "Веверске Кніниці",
+    "en": "Veverské Knínice"
+   }
+  },
+  {
+   "date": "2023-05-18",
+   "cs": "Průvod vyšyvanek",
+   "uk": "Хода у вишиванках",
+   "en": "Vyshyvanka parade",
+   "place": {
+    "cs": "Brno",
+    "uk": "Брно",
+    "en": "Brno"
+   }
+  },
+  {
+   "date": "2023-06-23",
+   "end": "2023-06-25",
+   "cs": "Mezinárodní folklorní festival Strážnice",
+   "uk": "Міжнародний фольклорний фестиваль у Стражніце",
+   "en": "Strážnice International Folklore Festival",
+   "place": {
+    "cs": "Strážnice",
+    "uk": "Стражніце",
+    "en": "Strážnice"
+   },
+   "highlight": true
+  },
+  {
+   "date": "2023-08-05",
+   "end": "2023-08-06",
+   "cs": "MFSF Jánošíkov dukát",
+   "uk": "МФФ «Яношіків дукат»",
+   "en": "Jánošík’s Ducat International Folk Festival",
+   "place": {
+    "cs": "Rožnov pod Radhoštěm",
+    "uk": "Рожнов-під-Радгоштем",
+    "en": "Rožnov pod Radhoštěm"
+   },
+   "highlight": true
+  },
+  {
+   "date": "2023-09-02",
+   "cs": "Slavnosti chleba",
+   "uk": "Свято хліба",
+   "en": "Bread Festival",
+   "place": {
+    "cs": "Slup",
+    "uk": "Слуп",
+    "en": "Slup"
+   }
+  },
+  {
+   "date": "2023-09-16",
+   "cs": "Babylonfest",
+   "uk": "Babylonfest",
+   "en": "Babylonfest",
+   "place": {
+    "cs": "Brno",
+    "uk": "Брно",
+    "en": "Brno"
+   }
+  },
+  {
+   "date": "2023-09-17",
+   "cs": "Den národnostních menšin",
+   "uk": "День національних меншин",
+   "en": "National Minorities Day",
+   "place": {
+    "cs": "Kuřim",
+    "uk": "Куржим",
+    "en": "Kuřim"
+   }
+  },
+  {
+   "date": "2023-09-27",
+   "cs": "Den seniorů v Moravském zemském muzeu",
+   "uk": "День людей похилого віку в Моравському земському музеї",
+   "en": "Seniors’ Day at the Moravian Museum",
+   "place": {
+    "cs": "Brno",
+    "uk": "Брно",
+    "en": "Brno"
+   }
+  },
+  {
+   "date": "2023-12-03",
+   "cs": "Staroukrajinské Vánoce",
+   "uk": "Староукраїнське Різдво",
+   "en": "Old Ukrainian Christmas",
+   "place": {
+    "cs": "Vídeň",
+    "uk": "Відень",
+    "en": "Vienna"
+   }
+  },
+  {
+   "date": "2023-12-17",
+   "cs": "Staroukrajinské Vánoce",
+   "uk": "Староукраїнське Різдво",
+   "en": "Old Ukrainian Christmas",
+   "place": {
+    "cs": "kostel sv. Josefa a u Jošta Moravského, Brno",
+    "uk": "храм св. Йосифа та біля Йошта Моравського, Брно",
+    "en": "St Joseph’s Church and Jošt of Moravia statue, Brno"
+   }
+  },
+  {
+   "date": "2024-01-07",
+   "cs": "Koleda u sv. Josefa",
+   "uk": "Коляда в храмі св. Йосифа",
+   "en": "Carols at St Joseph’s Church",
+   "place": {
+    "cs": "kostel sv. Josefa, Brno",
+    "uk": "храм св. Йосифа, Брно",
+    "en": "St Joseph’s Church, Brno"
+   }
+  },
+  {
+   "date": "2024-03-09",
+   "cs": "2. výročí Ukrajinského centra",
+   "uk": "2-га річниця Українського центру",
+   "en": "2nd anniversary of the Ukrainian Centre",
+   "place": {
+    "cs": "Brno",
+    "uk": "Брно",
+    "en": "Brno"
+   }
+  },
+  {
+   "date": "2024-05-25",
+   "cs": "Pod křenovskó májó",
+   "uk": "Фестиваль «Pod křenovskó májó»",
+   "en": "Pod křenovskó májó festival",
+   "place": {
+    "cs": "Křenovice",
+    "uk": "Кршеновіце",
+    "en": "Křenovice"
+   }
+  },
+  {
+   "date": "2024-05-28",
+   "cs": "Křest knihy",
+   "uk": "Презентація книги",
+   "en": "Book launch",
+   "place": {
+    "cs": "Divadlo Bolka Polívky, Brno",
+    "uk": "Театр Болека Полівки, Брно",
+    "en": "Bolek Polívka Theatre, Brno"
+   }
+  },
+  {
+   "date": "2024-06-08",
+   "cs": "Folklorní festival Přerov",
+   "uk": "Фольклорний фестиваль у Пршерові",
+   "en": "Přerov Folk Festival",
+   "place": {
+    "cs": "Přerov",
+    "uk": "Пршеров",
+    "en": "Přerov"
+   },
+   "highlight": true
+  },
+  {
+   "date": "2024-06-23",
+   "cs": "Ivana Kupala",
+   "uk": "Івана Купала",
+   "en": "Ivana Kupala (Midsummer)",
+   "place": {
+    "cs": "Vídeň",
+    "uk": "Відень",
+    "en": "Vienna"
+   }
+  },
+  {
+   "date": "2024-06-29",
+   "cs": "Koncert ke Dni s Pamětí národa",
+   "uk": "Концерт до Дня «Пам’яті народу»",
+   "en": "Memory of Nations Day concert",
+   "place": {
+    "cs": "Kraví hora, Brno",
+    "uk": "Кравí гора, Брно",
+    "en": "Kraví hora, Brno"
+   },
+   "highlight": true
+  },
+  {
+   "date": "2024-08-10",
+   "end": "2024-08-11",
+   "cs": "Folklorní festival Sousedé",
+   "uk": "Фольклорний фестиваль «Сусіди»",
+   "en": "Sousedé (Neighbours) Folk Festival",
+   "place": {
+    "cs": "Mikulov",
+    "uk": "Мікулов",
+    "en": "Mikulov"
+   },
+   "highlight": true
+  },
+  {
+   "date": "2024-08-24",
+   "cs": "Den nezávislosti Ukrajiny",
+   "uk": "День Незалежності України",
+   "en": "Ukrainian Independence Day",
+   "place": {
+    "cs": "Brno",
+    "uk": "Брно",
+    "en": "Brno"
+   }
+  },
+  {
+   "date": "2024-08-25",
+   "cs": "Den podpory ukrajinské nezávislosti",
+   "uk": "День підтримки незалежності України",
+   "en": "Day of Support for Ukrainian Independence",
+   "place": {
+    "cs": "Vědecká knihovna, Olomouc",
+    "uk": "Наукова бібліотека, Оломоуц",
+    "en": "Research Library, Olomouc"
+   }
+  },
+  {
+   "date": "2024-09-20",
+   "cs": "10 let Ukrajinské iniciativy jižní Moravy",
+   "uk": "10 років Української ініціативи Південної Моравії",
+   "en": "10 years of the Ukrainian Initiative of South Moravia",
+   "place": {
+    "cs": "Brno",
+    "uk": "Брно",
+    "en": "Brno"
+   }
+  },
+  {
+   "date": "2024-11-28",
+   "cs": "Staroukrajinské Vánoce u Jošta",
+   "uk": "Староукраїнське Різдво біля Йошта",
+   "en": "Old Ukrainian Christmas at Jošt",
+   "place": {
+    "cs": "Moravské náměstí, Brno",
+    "uk": "Моравська площа, Брно",
+    "en": "Moravské náměstí, Brno"
+   }
+  },
+  {
+   "date": "2024-12-05",
+   "cs": "Rozsvícení vánočního stromku",
+   "uk": "Запалення різдвяної ялинки",
+   "en": "Christmas tree lighting",
+   "place": {
+    "cs": "Divadlo Husa na provázku, Brno",
+    "uk": "Театр «Гуска на мотузці», Брно",
+    "en": "Goose on a String Theatre, Brno"
+   }
+  },
+  {
+   "date": "2024-12-07",
+   "cs": "Staroukrajinské Vánoce ve Vídni",
+   "uk": "Староукраїнське Різдво у Відні",
+   "en": "Old Ukrainian Christmas in Vienna",
+   "place": {
+    "cs": "Vídeň",
+    "uk": "Відень",
+    "en": "Vienna"
+   }
+  },
+  {
+   "date": "2024-12-10",
+   "cs": "Vánoční koncert",
+   "uk": "Різдвяний концерт",
+   "en": "Christmas concert",
+   "place": {
+    "cs": "Palác šlechtičen, Brno",
+    "uk": "Палац шляхетних панн, Брно",
+    "en": "Palace of Noblewomen, Brno"
+   },
+   "highlight": true
+  },
+  {
+   "date": "2025-01-05",
+   "cs": "Staroukrajinské Vánoce v kostele sv. Josefa",
+   "uk": "Староукраїнське Різдво в храмі св. Йосифа",
+   "en": "Old Ukrainian Christmas at St Joseph’s Church",
+   "place": {
+    "cs": "Brno",
+    "uk": "Брно",
+    "en": "Brno"
+   },
+   "highlight": true
+  },
+  {
+   "date": "2025-02-01",
+   "cs": "Koncert pro hrdiny",
+   "uk": "Концерт для героїв",
+   "en": "Concert for Heroes",
+   "place": {
+    "cs": "Lázně Darkov, Karviná",
+    "uk": "Лазні Дарков, Карвіна",
+    "en": "Darkov Spa, Karviná"
+   }
+  },
+  {
+   "date": "2025-02-15",
+   "cs": "Vystoupení v domově pro seniory",
+   "uk": "Виступ у будинку для людей похилого віку",
+   "en": "Performance at a seniors’ home",
+   "place": {
+    "cs": "Brno-Maloměřice",
+    "uk": "Брно-Маломержіце",
+    "en": "Brno-Maloměřice"
+   }
+  },
+  {
+   "date": "2025-04-06",
+   "cs": "Koncert pro život II – přímý přenos TV Noe",
+   "uk": "«Концерт для життя II» – пряма трансляція TV Noe",
+   "en": "Concert for Life II – live on TV Noe",
+   "place": {
+    "cs": "Ostrava",
+    "uk": "Острава",
+    "en": "Ostrava"
+   },
+   "highlight": true
+  },
+  {
+   "date": "2025-05-24",
+   "cs": "Slezské dny",
+   "uk": "Сілезькі дні",
+   "en": "Silesian Days",
+   "place": {
+    "cs": "Dolní Lomná",
+    "uk": "Дольні Ломна",
+    "en": "Dolní Lomná"
+   }
+  },
+  {
+   "date": "2025-06-14",
+   "end": "2025-06-15",
+   "cs": "FF Srdcom k tradícii",
+   "uk": "Фольклорний фестиваль «Srdcom k tradícii»",
+   "en": "Srdcom k tradícii Folk Festival",
+   "place": {
+    "cs": "Černík, Slovensko",
+    "uk": "Чернік, Словаччина",
+    "en": "Černík, Slovakia"
+   },
+   "highlight": true
+  },
+  {
+   "date": "2025-06-27",
+   "end": "2025-06-29",
+   "cs": "Mezinárodní folklorní festival Strážnice",
+   "uk": "Міжнародний фольклорний фестиваль у Стражніце",
+   "en": "Strážnice International Folklore Festival",
+   "place": {
+    "cs": "Strážnice",
+    "uk": "Стражніце",
+    "en": "Strážnice"
+   },
+   "highlight": true
+  },
+  {
+   "date": "2025-08-23",
+   "cs": "Den nezávislosti Ukrajiny",
+   "uk": "День Незалежності України",
+   "en": "Ukrainian Independence Day",
+   "place": {
+    "cs": "Moravské náměstí, Brno",
+    "uk": "Моравська площа, Брно",
+    "en": "Moravské náměstí, Brno"
+   }
+  },
+  {
+   "date": "2025-09-06",
+   "cs": "Chodníčky k domovu",
+   "uk": "«Chodníčky k domovu»",
+   "en": "Chodníčky k domovu festival",
+   "place": {
+    "cs": "Opava",
+    "uk": "Опава",
+    "en": "Opava"
+   }
+  },
+  {
+   "date": "2025-09-13",
+   "cs": "Babylonfest – Den národnostních menšin JMK",
+   "uk": "Babylonfest – День національних меншин",
+   "en": "Babylonfest – National Minorities Day",
+   "place": {
+    "cs": "Lužánky, Brno",
+    "uk": "Лужанки, Брно",
+    "en": "Lužánky Park, Brno"
+   }
+  },
+  {
+   "date": "2025-11-08",
+   "cs": "Martinská husa",
+   "uk": "Мартинська гуска",
+   "en": "St Martin’s Goose",
+   "place": {
+    "cs": "Bílovice nad Svitavou",
+    "uk": "Біловіце-над-Світавою",
+    "en": "Bílovice nad Svitavou"
+   }
+  },
+  {
+   "date": "2025-12-08",
+   "cs": "Staroukrajinské Vánoce u Jošta",
+   "uk": "Староукраїнське Різдво біля Йошта",
+   "en": "Old Ukrainian Christmas at Jošt",
+   "place": {
+    "cs": "Moravské náměstí, Brno",
+    "uk": "Моравська площа, Брно",
+    "en": "Moravské náměstí, Brno"
+   }
+  },
+  {
+   "date": "2025-12-12",
+   "cs": "Koleda ve Vídni",
+   "uk": "Коляда у Відні",
+   "en": "Carols in Vienna",
+   "place": {
+    "cs": "Vídeň",
+    "uk": "Відень",
+    "en": "Vienna"
+   },
+   "highlight": true
+  },
+  {
+   "date": "2025-12-21",
+   "cs": "Malanka – Commedia dell’arte po ukrajinsku",
+   "uk": "Маланка – комедія дель арте по-українськи",
+   "en": "Malanka – Ukrainian commedia dell’arte",
+   "place": {
+    "cs": "Moravské náměstí, Brno",
+    "uk": "Моравська площа, Брно",
+    "en": "Moravské náměstí, Brno"
+   }
+  },
+  {
+   "date": "2026-01-11",
+   "cs": "Koleda u sv. Josefa",
+   "uk": "Коляда в храмі св. Йосифа",
+   "en": "Carols at St Joseph’s Church",
+   "place": {
+    "cs": "kostel sv. Josefa, Brno",
+    "uk": "храм св. Йосифа, Брно",
+    "en": "St Joseph’s Church, Brno"
+   }
+  },
+  {
+   "date": "2026-06-27",
+   "cs": "Smetanova Litomyšl – Festivalové zahrady",
+   "uk": "Smetanova Litomyšl – фестивальні сади",
+   "en": "Smetana’s Litomyšl – Festival Gardens",
+   "place": {
+    "cs": "Litomyšl",
+    "uk": "Літомишль",
+    "en": "Litomyšl"
+   },
+   "highlight": true
+  },
+  {
+   "date": "2026-08-15",
+   "end": "2026-08-16",
+   "cs": "Chodské slavnosti",
+   "uk": "Ходське свято",
+   "en": "Chod Festival",
+   "place": {
+    "cs": "Domažlice",
+    "uk": "Домажліце",
+    "en": "Domažlice"
+   },
+   "highlight": true
+  },
+  {
+   "date": "2026-08-23",
+   "cs": "Den nezávislosti Ukrajiny",
+   "uk": "День Незалежності України",
+   "en": "Ukrainian Independence Day",
+   "place": {
+    "cs": "Brno",
+    "uk": "Брно",
+    "en": "Brno"
+   }
+  },
+  {
+   "date": "2026-09-05",
+   "cs": "Lidový rok",
+   "uk": "«Народний рік»",
+   "en": "Lidový rok (Folk Year) festival",
+   "place": {
+    "cs": "Velká Bystřice",
+    "uk": "Велька Бистршице",
+    "en": "Velká Bystřice"
+   }
+  },
+  {
+   "date": "2026-09-19",
+   "cs": "Babylonfest",
+   "uk": "Babylonfest",
+   "en": "Babylonfest",
+   "place": {
+    "cs": "Brno",
+    "uk": "Брно",
+    "en": "Brno"
+   }
+  },
+  {
+   "date": "2026-09-20",
+   "cs": "Třebovický koláč",
+   "uk": "«Требовицький коляч»",
+   "en": "Třebovický koláč festival",
+   "place": {
+    "cs": "Ostrava",
+    "uk": "Острава",
+    "en": "Ostrava"
+   }
+  },
+  {
+   "date": "2026-12-05",
+   "cs": "Staroukrajinské Vánoce u Jošta",
+   "uk": "Староукраїнське Різдво біля Йошта",
+   "en": "Old Ukrainian Christmas at Jošt",
+   "place": {
+    "cs": "Moravské náměstí, Brno",
+    "uk": "Моравська площа, Брно",
+    "en": "Moravské náměstí, Brno"
+   }
+  }
+ ]
+}
