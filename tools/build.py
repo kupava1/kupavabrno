@@ -466,10 +466,10 @@ def page(lang):
 <meta property="og:type" content="website">
 <meta property="og:title" content="{e(t["title"])}">
 <meta property="og:description" content="{e(t["desc"])}">
-<meta property="og:image" content="{BASE}/img/soubor-portret.jpg">
+<meta property="og:image" content="{BASE}/img/og-kupava.jpg">
 <meta property="og:url" content="{BASE}{LANGS[lang]}">
 <meta property="og:site_name" content="Kupava">
-<meta property="og:image:width" content="2048"><meta property="og:image:height" content="1365">
+<meta property="og:image:width" content="1200"><meta property="og:image:height" content="630"><meta property="og:image:type" content="image/jpeg"><meta name="twitter:image" content="{BASE}/img/og-kupava.jpg">
 <meta property="og:image:alt" content="{e(t["photo_alt"])}">
 <meta property="og:locale" content="{ {"cs":"cs_CZ","uk":"uk_UA","en":"en_GB"}[lang] }">
 <meta name="twitter:card" content="summary_large_image">
@@ -732,7 +732,7 @@ def archive(lang):
 <meta name="theme-color" content="#1c2f5a">
 <link rel="canonical" href="{url}">
 {alts}
-<meta property="og:type" content="website"><meta property="og:title" content="{e(title)}"><meta property="og:description" content="{e(x["arch_desc"])}"><meta property="og:image" content="{BASE}/img/soubor-portret.jpg"><meta property="og:url" content="{url}">
+<meta property="og:type" content="website"><meta property="og:title" content="{e(title)}"><meta property="og:description" content="{e(x["arch_desc"])}"><meta property="og:image" content="{BASE}/img/og-kupava.jpg"><meta property="og:url" content="{url}">
 <link rel="icon" type="image/png" sizes="192x192" href="{pre}img/icon-192.png">
 {fonts_head(pre, lang)}
 <link rel="stylesheet" href="{pre}assets/style.css?v={VER}">
