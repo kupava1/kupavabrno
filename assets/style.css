@@ -386,3 +386,14 @@ ul.hl li:last-child{border-bottom:0}
 .prog .prog-body{padding:26px 30px 30px}
 @media (max-width:640px){.prog .prog-body{padding:22px 22px 24px}}
 @media (max-width:640px){.upcoming{flex-direction:column;align-items:flex-start;gap:8px}}
+
+/* ornament: ukrajinská osmicípá hvězda (dle předlohy od souboru) – makový pás s krémovými hvězdami */
+.tv:before,.contact:before{height:28px;opacity:1;border:0;background:var(--poppy) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='30' height='26' viewBox='0 0 30 26'%3E%3Cg fill='%23faf7f1'%3E%3Cpath d='M18.14 14.30L21.12 17.70L25.62 17.40L22.65 14.00ZM16.30 16.14L16.00 20.65L19.40 23.62L19.70 19.12ZM13.70 16.14L10.30 19.12L10.60 23.62L14.00 20.65ZM11.86 14.30L7.35 14.00L4.38 17.40L8.88 17.70ZM11.86 11.70L8.88 8.30L4.38 8.60L7.35 12.00ZM13.70 9.86L14.00 5.35L10.60 2.38L10.30 6.88ZM16.30 9.86L19.70 6.88L19.40 2.38L16.00 5.35ZM18.14 11.70L22.65 12.00L25.62 8.60L21.12 8.30Z'/%3E%3Ccircle cx='15' cy='13' r='1.7'/%3E%3Ccircle cx='0' cy='13' r='1.5'/%3E%3Ccircle cx='30' cy='13' r='1.5'/%3E%3C/g%3E%3C/svg%3E") repeat-x center/30px 26px}
+.tv,.contact{padding-top:124px}
+@media (max-width:1020px){.tv,.contact{padding-top:100px}}
+.orn{width:150px;height:24px}
+.tv:before,.contact:before{height:40px;background-size:42px 36px}
+.tv,.contact{padding-top:136px}
+@media (max-width:1020px){.tv,.contact{padding-top:112px}}
+@media (max-width:640px){.tv:before,.contact:before{height:32px;background-size:34px 29px}}
+.orn{width:200px;height:32px;margin:8px auto 20px}

@@ -242,7 +242,7 @@ T = {
   foot_seat="Registered office: Městečko 68, 664 61 Rajhrad, Czech Republic", foot_reg="Reg. no. 23686766 · association registered at the Regional Court in Brno, L 31074",
 )}
 
-ORN = '<svg class="orn" viewBox="0 0 120 12" aria-hidden="true"><g fill="none" stroke="currentColor" stroke-width="1.5"><path d="M0 6h44M76 6h44"/><path d="M60 1l5 5-5 5-5-5z"/><path d="M50 3l3 3-3 3-3-3zM70 3l3 3-3 3-3-3z"/></g></svg>'
+ORN = '<svg class="orn" viewBox="0 0 150 24" aria-hidden="true"><g fill="currentColor"><path d="M8 11.25h46v1.5H8zM96 11.25h46v1.5H96z"/><circle cx="62" cy="12" r="1.6"/><circle cx="88" cy="12" r="1.6"/><g transform="translate(45 0)"><path d="M33.05 13.26L35.88 16.49L40.16 16.21L37.33 12.98ZM31.26 15.05L30.98 19.33L34.21 22.16L34.49 17.88ZM28.74 15.05L25.51 17.88L25.79 22.16L29.02 19.33ZM26.95 13.26L22.67 12.98L19.84 16.21L24.12 16.49ZM26.95 10.74L24.12 7.51L19.84 7.79L22.67 11.02ZM28.74 8.95L29.02 4.67L25.79 1.84L25.51 6.12ZM31.26 8.95L34.49 6.12L34.21 1.84L30.98 4.67ZM33.05 10.74L37.33 11.02L40.16 7.79L35.88 7.51Z"/><circle cx="30" cy="12" r="1.6"/></g></g></svg>'
 
 def page(lang):
     t = T[lang]; pre = "" if lang == "cs" else "../"
