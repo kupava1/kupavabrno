@@ -9,9 +9,9 @@
 
   var lang = (document.documentElement.lang || 'cs').slice(0,2);
   var T = {
-    cs: {text:'Používáme cookies Google Analytics a Google Ads, abychom věděli, jak návštěvníci web používají a jak fungují naše reklamy. Bez vašeho souhlasu cookies neukládáme.', yes:'Povolit', no:'Odmítnout', settings:'Nastavení cookies'},
-    uk: {text:'Ми використовуємо cookies Google Analytics і Google Ads, щоб розуміти, як відвідувачі користуються сайтом і як працює наша реклама. Без вашої згоди cookies не зберігаються.', yes:'Дозволити', no:'Відхилити', settings:'Налаштування cookies'},
-    en: {text:'We use Google Analytics and Google Ads cookies to understand how visitors use this website and how our ads perform. Without your consent, no cookies are stored.', yes:'Allow', no:'Decline', settings:'Cookie settings'}
+    cs: {text:'<b>Koledníci chodí jen tam, kde jim otevřou dveře.</b> Stejně tak naše cookies: bez vašeho svolení si nevezmeme ani drobek. Když je pustíte dál, Google Analytics a Google Ads nám prozradí, jak se vám u nás líbí a jak fungují naše reklamy.', yes:'Otevřít dveře (povolit)', no:'Ne, děkuji', settings:'Nastavení cookies'},
+    uk: {text:'<b>Колядники заходять лише туди, де їм відчиняють двері.</b> Так і наші cookies: без вашого дозволу не візьмемо й крихти. Якщо впустите їх, Google Analytics і Google Ads підкажуть нам, як вам у нас подобається і як працює наша реклама.', yes:'Відчинити двері (дозволити)', no:'Ні, дякую', settings:'Налаштування cookies'},
+    en: {text:'<b>Carol singers only come in where the door is opened.</b> Our cookies are the same: without your permission we won’t take a single crumb. If you let them in, Google Analytics and Google Ads tell us how you like our website and how our ads are doing.', yes:'Open the door (allow)', no:'No, thank you', settings:'Cookie settings'}
   }[lang] || {text:'', yes:'OK', no:'No', settings:'Cookies'};
 
   function get(){ try { return localStorage.getItem(KEY); } catch(e){ return null; } }
