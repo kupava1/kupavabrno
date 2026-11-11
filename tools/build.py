@@ -291,7 +291,12 @@ def page(lang):
     hl = "".join(f'<li><time>{e(when(evs))}</time><b>{e(evs[0][lang])}</b><span>{e(evs[0]["place"][lang])}</span></li>' for n, evs in rest)
     up = ""
     if UPCOMING:
-        up = f'<div class="upcoming"><p class="kicker">{e(t["up_k"])}</p><ul>' + "".join(f'<li><time>{e(fdate(ev, lang))}</time><b>{e(ev[lang])}</b><span>{e(ev["place"][lang])}</span></li>' for ev in UPCOMING) + '</ul></div>'
+        def up_item(ev):
+            po = next((p for p in POSTS if p.get("event_date") == ev["date"]), None)
+            img = f'<a class="up-img" href="aktuality/{po["slug"]}/"><img src="{pre}img/g/{po["image"]}.jpg" alt="{e(ev[lang])}" loading="lazy" width="760" height="506"></a>' if po else ''
+            more = f'<a class="link" href="aktuality/{po["slug"]}/">{e(X[lang]["more"])} →</a>' if po else ''
+            return f'<li class="up-item">{img}<div class="up-text"><time>{e(fdate(ev, lang))}</time><b>{e(ev[lang])}</b><span>{e(ev["place"][lang])}</span>{more}</div></li>'
+        up = f'<div class="upcoming"><p class="kicker">{e(t["up_k"])}</p><ul>' + "".join(up_item(ev) for ev in UPCOMING) + '</ul></div>'
     vids = "".join(f'<div class="vid"><button class="yt" data-id="{vid}" aria-label="{e(title)}"><img src="https://i.ytimg.com/vi/{vid}/hqdefault.jpg" alt="" loading="lazy"></button><p><b lang="uk">{e(title)}</b><span>{e(sub[lang])}</span></p></div>' for vid, title, sub in VIDEOS)
     gal = "".join(f'<a href="{pre}img/{s}.jpg"><img src="{pre}img/g/{s}.jpg" alt="{e(a[lang])}" loading="lazy"></a>' for s, a in GALLERY)
     f = t["f"]; l1, l2, l3 = t["con_labels"]
@@ -394,12 +399,12 @@ def page(lang):
 
 {news_section(lang, pre)}
 
-<section id="video"><div class="wrap">
+<section id="video" class="soft"><div class="wrap">
  <div class="sec-head"><div><p class="kicker">{e(t["vid_k"])}</p><h2>{e(t["vid_h"])}</h2></div><a class="link" href="https://www.youtube.com/watch?v=qvbnvvhpYXQ&amp;list=PLs8RLUolQE94t0YRGZ3u8ZIh3bfrB9ls5" target="_blank" rel="noopener">{e(t["vid_more"])} ↗</a></div>
  <div class="videos">{vids}</div>
 </div></section>
 
-<section id="galerie" class="soft"><div class="wrap">
+<section id="galerie"><div class="wrap">
  <p class="kicker">{e(t["gal_k"])}</p>
  <h2>{e(t["gal_h"])}</h2>
  <div class="gallery">{gal}</div>

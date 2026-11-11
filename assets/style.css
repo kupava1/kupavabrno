@@ -409,3 +409,28 @@ ul.hl li:last-child{border-bottom:0}
 /* pás hvězd: průhledný, zlaté hvězdy přímo na pozadí sekce */
 .tv:before,.contact:before{top:22px;height:34px;opacity:.9;background:var(--wheat);-webkit-mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='-402.5 -340 805 680'%3E%3Cpath d='M-137 -325L-45 -232L-45 -67L-137 -160ZM-325 -137L-232 -45L-67 -45L-160 -137ZM-137 325L-45 232L-45 67L-137 160ZM325 -137L232 -45L67 -45L160 -137ZM137 -325L45 -232L45 -67L137 -160ZM-325 137L-232 45L-67 45L-160 137ZM137 325L45 232L45 67L137 160ZM325 137L232 45L67 45L160 137Z'/%3E%3Ccircle r='45'/%3E%3Ccircle cx='-402.5' r='36'/%3E%3Ccircle cx='402.5' r='36'/%3E%3C/svg%3E") repeat-x center/40px 34px;mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='-402.5 -340 805 680'%3E%3Cpath d='M-137 -325L-45 -232L-45 -67L-137 -160ZM-325 -137L-232 -45L-67 -45L-160 -137ZM-137 325L-45 232L-45 67L-137 160ZM325 -137L232 -45L67 -45L160 -137ZM137 -325L45 -232L45 -67L137 -160ZM-325 137L-232 45L-67 45L-160 137ZM137 325L45 232L45 67L137 160ZM325 137L232 45L67 45L160 137Z'/%3E%3Ccircle r='45'/%3E%3Ccircle cx='-402.5' r='36'/%3E%3Ccircle cx='402.5' r='36'/%3E%3C/svg%3E") repeat-x center/40px 34px}
 @media (max-width:640px){.tv:before,.contact:before{height:28px;-webkit-mask-size:33px 28px;mask-size:33px 28px}}
+
+/* Připravujeme – s fotkou z aktuality */
+.upcoming{display:block;padding:24px}
+.upcoming .kicker{margin:0 0 14px}
+.upcoming ul{display:grid;gap:18px}
+.upcoming li.up-item{display:grid;grid-template-columns:280px 1fr;gap:28px;align-items:center;padding:0}
+.up-img{display:block;border-radius:8px;overflow:hidden}
+.up-img img{width:100%;aspect-ratio:3/2;object-fit:cover;transition:transform .5s}
+.up-img:hover img{transform:scale(1.04)}
+.up-text{display:flex;flex-direction:column;gap:4px}
+.up-text time{font-size:14px}
+.up-text b{font-family:var(--serif);font-size:30px;font-weight:600;line-height:1.15;color:#fff}
+.upcoming .up-text span{grid-column:auto;font-size:15px}
+.up-text .link{color:var(--wheat);margin-top:8px}
+.up-text .link:hover{color:#fff}
+@media (max-width:640px){.upcoming li.up-item{grid-template-columns:1fr;gap:14px}.up-text b{font-size:25px}}
+.upcoming li.up-item{grid-template-columns:230px 1fr}
+.up-img img{height:auto;aspect-ratio:4/5;object-position:center 30%}
+@media (max-width:640px){.upcoming li.up-item{grid-template-columns:1fr}.up-img img{aspect-ratio:4/3}}
+.upcoming li.up-item{grid-template-columns:340px 1fr}
+.up-img img{aspect-ratio:3/2;object-position:center}
+@media (max-width:1020px){.upcoming li.up-item{grid-template-columns:260px 1fr}}
+@media (max-width:640px){.upcoming li.up-item{grid-template-columns:1fr}}
+/* rytmus mezer: střídání pozadí, menší okraje na mobilu */
+@media (max-width:640px){section{padding:56px 0}.tv,.contact{padding-top:96px}.stats-sec{padding:40px 0 16px}}
