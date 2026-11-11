@@ -242,6 +242,12 @@ T = {
   foot_seat="Registered office: Městečko 68, 664 61 Rajhrad, Czech Republic", foot_reg="Reg. no. 23686766 · association registered at the Regional Court in Brno, L 31074",
 )}
 
+GTAG_HEAD = """<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}
+(function(){var g=false;try{g=localStorage.getItem('kupava_consent_v1')==='granted'}catch(e){}var v=g?'granted':'denied';
+gtag('consent','default',{ad_storage:v,ad_user_data:v,ad_personalization:'denied',analytics_storage:v,wait_for_update:500});})();
+gtag('set','ads_data_redaction',true);gtag('set','url_passthrough',true);
+gtag('js',new Date());gtag('config','G-X6NC9E6Y45');gtag('config','AW-18567655723');</script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-X6NC9E6Y45"></script>"""
 ORN = '<svg class="orn" viewBox="0 0 240 44" aria-hidden="true"><g fill="currentColor"><path d="M8 21.3h72v1.4H8zM160 21.3h72v1.4h-72z"/><circle cx="90" cy="22" r="2.2"/><circle cx="150" cy="22" r="2.2"/><path d="M111.51 1.85L117.21 7.62L117.21 17.85L111.51 12.08ZM99.85 13.51L105.62 19.21L115.85 19.21L110.08 13.51ZM111.51 42.15L117.21 36.38L117.21 26.15L111.51 31.92ZM140.15 13.51L134.38 19.21L124.15 19.21L129.92 13.51ZM128.49 1.85L122.79 7.62L122.79 17.85L128.49 12.08ZM99.85 30.49L105.62 24.79L115.85 24.79L110.08 30.49ZM128.49 42.15L122.79 36.38L122.79 26.15L128.49 31.92ZM140.15 30.49L134.38 24.79L124.15 24.79L129.92 30.49Z"/><circle cx="120" cy="22" r="2.9"/></g></svg>'
 
 def page(lang):
@@ -332,6 +338,7 @@ def page(lang):
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Manrope:wght@400;500;700;800&display=swap&subset=cyrillic,latin-ext" rel="stylesheet">
 <link rel="stylesheet" href="{pre}assets/style.css?v={VER}">
 <script type="application/ld+json">{json.dumps(ld, ensure_ascii=False)}</script>
+{GTAG_HEAD}
 <script src="{pre}assets/consent.js?v={VER}" defer></script>
 </head>
 <body>
@@ -536,6 +543,7 @@ def article(lang, po):
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Manrope:wght@400;500;700;800&display=swap&subset=cyrillic,latin-ext" rel="stylesheet">
 <link rel="stylesheet" href="{pre}assets/style.css?v={VER}">
 <script type="application/ld+json">{json.dumps(ld, ensure_ascii=False)}</script>
+{GTAG_HEAD}
 <script src="{pre}assets/consent.js?v={VER}" defer></script>
 </head>
 <body class="article-page">
@@ -590,6 +598,7 @@ def archive(lang):
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Manrope:wght@400;500;700;800&display=swap&subset=cyrillic,latin-ext" rel="stylesheet">
 <link rel="stylesheet" href="{pre}assets/style.css?v={VER}">
+{GTAG_HEAD}
 <script src="{pre}assets/consent.js?v={VER}" defer></script>
 </head>
 <body class="article-page">
