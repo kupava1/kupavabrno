@@ -81,7 +81,7 @@ FEATURED_IMG = {
  "Staroukrajinské Vánoce v kostele sv. Josefa": "koledy-sv-josef",
  "Koleda ve Vídni": "viden-hvezda-2025",
  "Mezinárodní folklorní festival Lidový rok": "lidovy-rok-2026",
- "Vánoční koncert": "palac-slechticen-2024",
+ "Smetanova Litomyšl – Festivalové zahrady": "smetanova-litomysl-2026",
 }
 
 VIDEOS = [
