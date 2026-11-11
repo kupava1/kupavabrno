@@ -9,10 +9,10 @@
 
   var lang = (document.documentElement.lang || 'cs').slice(0,2);
   var T = {
-    cs: {text:'<b>Koledníci chodí jen tam, kde jim otevřou dveře.</b> Stejně tak naše cookies: bez vašeho svolení si nevezmeme ani drobek. Když je pustíte dál, Google Analytics a Google Ads nám prozradí, jak se vám u nás líbí a jak fungují naše reklamy.', yes:'Otevřít dveře (povolit)', no:'Ne, děkuji', settings:'Nastavení cookies'},
-    uk: {text:'<b>Колядники заходять лише туди, де їм відчиняють двері.</b> Так і наші cookies: без вашого дозволу не візьмемо й крихти. Якщо впустите їх, Google Analytics і Google Ads підкажуть нам, як вам у нас подобається і як працює наша реклама.', yes:'Відчинити двері (дозволити)', no:'Ні, дякую', settings:'Налаштування cookies'},
-    en: {text:'<b>Carol singers only come in where the door is opened.</b> Our cookies are the same: without your permission we won’t take a single crumb. If you let them in, Google Analytics and Google Ads tell us how you like our website and how our ads are doing.', yes:'Open the door (allow)', no:'No, thank you', settings:'Cookie settings'}
-  }[lang] || {text:'', yes:'OK', no:'No', settings:'Cookies'};
+    cs: {text:'<b>Koledníci chodí jen tam, kde jim otevřou dveře.</b> Stejně tak naše cookies: bez vašeho svolení žádné neukládáme. Když je pustíte dál, Google Analytics a Google Ads nám prozradí, jak se vám u nás líbí a jak fungují naše reklamy.', yes:'Otevřít dveře (povolit)', no:'Ne, děkuji', settings:'Nastavení cookies', label:'Souhlas s cookies', more:'Ochrana osobních údajů', url:'/ochrana-udaju/'},
+    uk: {text:'<b>Колядники заходять лише туди, де їм відчиняють двері.</b> Так і наші файли cookie: без вашого дозволу ми їх не зберігаємо. Якщо впустите їх, Google Analytics і Google Ads підкажуть нам, як вам у нас подобається і як працює наша реклама.', yes:'Відчинити двері (дозволити)', no:'Ні, дякую', settings:'Налаштування файлів cookie', label:'Згода на файли cookie', more:'Захист персональних даних', url:'/uk/ochrana-udaju/'},
+    en: {text:'<b>Carol singers only come in when the door is opened to them.</b> Our cookies are the same: without your permission we don’t store any. If you let them in, Google Analytics and Google Ads tell us how you like our website and how our ads are doing.', yes:'Open the door (allow)', no:'No, thank you', settings:'Cookie settings', label:'Cookie consent', more:'Privacy policy', url:'/en/ochrana-udaju/'}
+  }[lang] || {text:'', yes:'OK', no:'No', settings:'Cookies', label:'Cookies', more:'Privacy', url:'/ochrana-udaju/'};
 
   function get(){ try { return localStorage.getItem(KEY); } catch(e){ return null; } }
   function set(v){ try { localStorage.setItem(KEY, v); } catch(e){} }
@@ -24,8 +24,8 @@
 
   function banner(){
     if (document.getElementById('cookie-bar')) return;
-    var b = document.createElement('div'); b.id = 'cookie-bar'; b.setAttribute('role','dialog'); b.setAttribute('aria-live','polite');
-    b.innerHTML = '<p>'+T.text+'</p><div class="cb-btns"><button type="button" class="btn small outline cb-no">'+T.no+'</button><button type="button" class="btn small primary cb-yes">'+T.yes+'</button></div>';
+    var b = document.createElement('div'); b.id = 'cookie-bar'; b.setAttribute('role','dialog'); b.setAttribute('aria-live','polite'); b.setAttribute('aria-label', T.label);
+    b.innerHTML = '<p>'+T.text+' <a href="'+T.url+'">'+T.more+'</a></p><div class="cb-btns"><button type="button" class="btn small outline cb-no">'+T.no+'</button><button type="button" class="btn small primary cb-yes">'+T.yes+'</button></div>';
     document.body.appendChild(b);
     b.querySelector('.cb-yes').onclick = function(){ set('granted'); b.remove(); update(true); };
     b.querySelector('.cb-no').onclick = function(){ set('denied'); b.remove(); update(false); };

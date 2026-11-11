@@ -40,9 +40,9 @@
   {
    "date": "2023-08-05",
    "end": "2023-08-06",
-   "cs": "MFSF Jánošíkov dukát",
-   "uk": "МФФ «Яношіків дукат»",
-   "en": "Jánošík’s Ducat International Folk Festival",
+   "cs": "Jánošíkův dukát – Mezinárodní festival slovenského folkloru",
+   "uk": "Міжнародний фестиваль словацького фольклору «Яношиків дукат»",
+   "en": "Jánošík’s Ducat International Folklore Festival",
    "place": {
     "cs": "Rožnov pod Radhoštěm",
     "uk": "Рожнов-під-Радгоштем",
@@ -164,7 +164,7 @@
    "date": "2024-06-08",
    "cs": "Folklorní festival Přerov",
    "uk": "Фольклорний фестиваль у Пршерові",
-   "en": "Přerov Folk Festival",
+   "en": "Přerov Folklore Festival",
    "place": {
     "cs": "Přerov",
     "uk": "Пршеров",
@@ -186,11 +186,11 @@
   {
    "date": "2024-06-29",
    "cs": "Koncert ke Dni s Pamětí národa",
-   "uk": "Концерт до Дня «Пам’яті народу»",
+   "uk": "Концерт до «Дня з Пам’яттю народу»",
    "en": "Memory of Nations Day concert",
    "place": {
     "cs": "Kraví hora, Brno",
-    "uk": "Кравí гора, Брно",
+    "uk": "Краві гора, Брно",
     "en": "Kraví hora, Brno"
    },
    "highlight": true
@@ -200,7 +200,7 @@
    "end": "2024-08-11",
    "cs": "Folklorní festival Sousedé",
    "uk": "Фольклорний фестиваль «Сусіди»",
-   "en": "Sousedé (Neighbours) Folk Festival",
+   "en": "Sousedé (Neighbours) Folklore Festival",
    "place": {
     "cs": "Mikulov",
     "uk": "Мікулов",
@@ -276,9 +276,9 @@
   },
   {
    "date": "2024-12-10",
-   "cs": "Vánoční koncert",
-   "uk": "Різдвяний концерт",
-   "en": "Christmas concert",
+   "cs": "Vánoční koncert národnostních menšin",
+   "uk": "Різдвяний концерт національних меншин",
+   "en": "Christmas concert of national minorities",
    "place": {
     "cs": "Palác šlechtičen, Brno",
     "uk": "Палац шляхетних панн, Брно",
@@ -346,9 +346,9 @@
   {
    "date": "2025-06-14",
    "end": "2025-06-15",
-   "cs": "FF Srdcom k tradícii",
+   "cs": "Folklorní festival Srdcom k tradícii",
    "uk": "Фольклорний фестиваль «Srdcom k tradícii»",
-   "en": "Srdcom k tradícii Folk Festival",
+   "en": "Srdcom k tradícii Folklore Festival",
    "place": {
     "cs": "Černík, Slovensko",
     "uk": "Чернік, Словаччина",
@@ -461,7 +461,7 @@
   {
    "date": "2026-06-27",
    "cs": "Smetanova Litomyšl – Festivalové zahrady",
-   "uk": "Smetanova Litomyšl – фестивальні сади",
+   "uk": "Smetanova Litomyšl – «Фестивальні сади»",
    "en": "Smetana’s Litomyšl – Festival Gardens",
    "place": {
     "cs": "Litomyšl",
