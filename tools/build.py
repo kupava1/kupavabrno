@@ -258,7 +258,11 @@ def page(lang):
           "email":"kupava@kupavabrno.cz","telephone":"+420777072433",
           "address":{"@type":"PostalAddress","streetAddress":"Městečko 68","postalCode":"66461","addressLocality":"Rajhrad","addressCountry":"CZ"},
           "areaServed":["CZ","SK","AT","Europe"],"sameAs":SAME}
-    events = [{"@type":"MusicEvent","name":ev[lang],"startDate":ev["date"],"endDate":ev.get("end",ev["date"]),"eventStatus":"https://schema.org/EventScheduled",
+    EVDESC = {"cs":"Vystoupení ukrajinského folklorního souboru Kupava – tradiční vícehlasý zpěv a živá lidová hudba.","uk":"Виступ українського фольклорного ансамблю «Купава» – традиційний багатоголосий спів і жива народна музика.","en":"A performance by Kupava, the Ukrainian folk ensemble – traditional polyphonic singing and live folk music."}
+    def evdesc(ev):
+        po = next((p for p in POSTS if p.get("event_date") == ev["date"]), None)
+        return po[lang]["perex"] if po else EVDESC[lang]
+    events = [{"@type":"MusicEvent","name":ev[lang],"description":evdesc(ev),"startDate":ev["date"],"endDate":ev.get("end",ev["date"]),"eventStatus":"https://schema.org/EventScheduled",
                "eventAttendanceMode":"https://schema.org/OfflineEventAttendanceMode","location":{"@type":"Place","name":ev["place"][lang],"address":ev["place"][lang]},
                "performer":{"@id":BASE+"/#kupava"},"organizer":{"@id":BASE+"/#kupava"},"image":BASE+"/img/soubor-portret.jpg","url":BASE+LANGS[lang]+"#vystoupeni"} for ev in UPCOMING]
     ld = {"@context":"https://schema.org","@graph":[group,
