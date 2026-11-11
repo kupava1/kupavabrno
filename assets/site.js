@@ -10,7 +10,10 @@
   document.querySelectorAll('.yt').forEach(function(el){
     el.addEventListener('click', function(){
       var id=el.getAttribute('data-id');
-      el.innerHTML='<iframe src="https://www.youtube-nocookie.com/embed/'+id+'?autoplay=1&rel=0" title="'+(el.getAttribute('aria-label')||'Video')+'" allow="autoplay; encrypted-media; picture-in-picture" allowfullscreen></iframe>';
+      // přehrávač patří do obyčejného bloku (ne do tlačítka) a bez ikonky přes video – jinak nejde ovládat (pauza apod.)
+      var box=document.createElement('div'); box.className='yt playing';
+      box.innerHTML='<iframe src="https://www.youtube-nocookie.com/embed/'+id+'?autoplay=1&rel=0&playsinline=1" title="'+(el.getAttribute('aria-label')||'Video')+'" allow="autoplay; encrypted-media; picture-in-picture; fullscreen" allowfullscreen></iframe>';
+      el.parentNode.replaceChild(box, el);
       track('video_play', {video_id:id});
     }, {once:true});
   });

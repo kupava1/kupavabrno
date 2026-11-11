@@ -492,3 +492,7 @@ picture img,.about-pic img,.tv-pic img,.feat-img img,.prog-img img,.news-card im
 @media (max-width:640px){.about-pic img,.tv-pic img,.feat-img img,.prog-img img,.news-card img,.up-img img{aspect-ratio:3/2}}
 .sup-logos{flex-wrap:wrap}
 @media (max-width:640px){.sup-card{padding:18px}.sup-logos{justify-content:center;padding:14px 12px}.sup-logos img{height:44px}.sup-logos picture:first-child img[alt^="Ukrajinské centrum"]{height:64px}}
+
+/* spuštěné video: bez ikonky přehrávání, ovládání YouTube volně klikatelné */
+.yt.playing{cursor:auto}
+.yt.playing:after,.yt.playing:before{display:none!important;content:none!important}
