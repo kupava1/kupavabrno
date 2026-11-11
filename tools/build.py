@@ -82,7 +82,6 @@ REPERTOIRE = [
 # Významná vystoupení s vlastní fotografií z dané akce (klíč = název akce v češtině, fotka v img/g/)
 FEATURED_IMG = {
  "Mezinárodní folklorní festival Strážnice": "soubor-straznice",
- "Koncert pro život II – přímý přenos TV Noe": "vinky",
  "Staroukrajinské Vánoce v kostele sv. Josefa": "koledy-sv-josef",
  "Koleda ve Vídni": "viden-hvezda-2025",
  "Mezinárodní folklorní festival Lidový rok": "lidovy-rok-2026",
@@ -282,12 +281,47 @@ def _dims(rel):
         except Exception: pass
         _DIM[rel] = (w, h)
     return _DIM[rel]
-def pic(pre, rel_noext, alt, attrs='loading="lazy"'):
+def pic(pre, rel_noext, alt, attrs='loading="lazy"', sizes="(max-width:640px) 100vw, 600px"):
     w, h = _dims(rel_noext + ".jpg")
     wh = f' width="{w}" height="{h}"' if w else ""
     webp = os.path.exists(os.path.join(OUT, rel_noext + ".webp"))
-    src = f'<source srcset="{pre}{rel_noext}.webp" type="image/webp">' if webp else ""
+    big = rel_noext.replace("img/g/", "img/w/") if rel_noext.startswith("img/g/") else None
+    if webp and big and os.path.exists(os.path.join(OUT, big + ".webp")):
+        src = f'<source type="image/webp" srcset="{pre}{rel_noext}.webp 760w, {pre}{big}.webp 1400w" sizes="{sizes}">'
+    else:
+        src = f'<source srcset="{pre}{rel_noext}.webp" type="image/webp">' if webp else ""
     return f'<picture>{src}<img src="{pre}{rel_noext}.jpg" alt="{e(alt)}"{wh} {attrs}></picture>'
+
+# Aktuality vs. vystoupení: článek k vystoupení se ukazuje u vystoupení, v aktualitách jen ostatní zprávy
+EVENT_DATES = {ev["date"] for ev in EVENTS}
+def post_for_event(ev):
+    return next((p for p in POSTS if p.get("event_date") == ev["date"]), None)
+NEWS_POSTS = [p for p in POSTS if p.get("event_date") not in EVENT_DATES]
+
+# Podporují nás (povinná publicita JMK: logo + text „Podpořil Jihomoravský kraj“)
+SUPPORT = {
+ "cs": dict(k="Podporují nás",
+            jmk="Projekt „Rozvoj ukrajinského pěveckého folkloru“ v roce 2026 podpořil Jihomoravský kraj.",
+            uc="Soubor vznikl a zkouší v Ukrajinském centru v Brně, které provozuje Ukrajinská iniciativa Jižní Moravy, z. s."),
+ "uk": dict(k="Нас підтримують",
+            jmk="Проєкт «Розвиток українського пісенного фольклору» у 2026 році підтримав Південноморавський край.",
+            uc="Ансамбль заснований і проводить репетиції в Українському центрі в Брно, який діє при громадському об’єднанні «Українська ініціатива Південної Моравії»."),
+ "en": dict(k="Supported by",
+            jmk="The project “Developing Ukrainian Vocal Folklore” was supported by the South Moravian Region in 2026.",
+            uc="The ensemble was founded and rehearses at the Ukrainian Centre in Brno, run by the Ukrainian Initiative of South Moravia (Ukrajinská iniciativa Jižní Moravy, z. s.)."),
+}
+def support_section(lang, pre):
+    S = SUPPORT[lang]
+    def logo(name, alt, w, h):
+        return (f'<picture><source srcset="{pre}img/partneri/{name}.webp" type="image/webp">'
+                f'<img src="{pre}img/partneri/{name}.png" alt="{e(alt)}" width="{w}" height="{h}" loading="lazy"></picture>')
+    return f'''<section id="podporuji" class="support-sec"><div class="wrap">
+ <p class="kicker">{e(S["k"])}</p>
+ <div class="support">
+  <div class="sup-card"><a class="sup-logos" href="https://www.jmk.cz/" target="_blank" rel="noopener">{logo("jihomoravsky-kraj", "Jihomoravský kraj", 560, 85)}</a><p>{e(S["jmk"])}</p></div>
+  <div class="sup-card"><a class="sup-logos" href="https://www.ukrijm.cz/" target="_blank" rel="noopener">{logo("ukrajinske-centrum", "Ukrajinské centrum v Brně", 360, 346)}{logo("ukrajinska-iniciativa-jm", "Ukrajinská iniciativa Jižní Moravy, z. s.", 560, 166)}</a><p>{e(S["uc"])}</p></div>
+ </div>
+</div></section>'''
 
 def footer(lang, pre, langs):
     t = T[lang]
@@ -358,7 +392,7 @@ def page(lang):
     INLANG = {"cs":"cs-CZ","uk":"uk-UA","en":"en"}[lang]
     group = {"@type":["MusicGroup","PerformingGroup"],"@id":BASE+"/#kupava","name":"Kupava","alternateName":["Купава","Kupava Brno","Ukrajinský folklorní soubor Kupava","Ukrajinský sbor Kupava","Ансамбль «Купава»","Український хор «Купава»","Kupava Ukrainian Choir"],
           "legalName":"Ukrajinský folklorní soubor KUPAVA, z.s.","description":t["desc"],"url":BASE+"/","logo":BASE+"/img/logo.png","image":BASE+"/img/soubor-portret.jpg",
-          "genre":["Folk music","Ukrainian folk music","Choral music","Polyphonic singing","Christmas carols","World music"],"knowsAbout":["Folk songs","Folklore","Choral singing","Polyphonic singing","Christmas carols","Traditional costume","Ukrainian Christmas traditions"],"foundingDate":"2023-02","foundingLocation":{"@type":"Place","name":"Brno"},
+          "genre":["Folk music","Ukrainian folk music","Choral music","Polyphonic singing","Christmas carols","World music"],"knowsAbout":["Folk songs","Folklore","Choral singing","Polyphonic singing","Christmas carols","Traditional costume","Ukrainian Christmas traditions"],"foundingDate":"2023-02","funder":[{"@type":"GovernmentOrganization","name":"Jihomoravský kraj","url":"https://www.jmk.cz/"}],"sponsor":[{"@type":"Organization","name":"Ukrajinská iniciativa Jižní Moravy, z. s.","url":"https://www.ukrijm.cz/"}],"foundingLocation":{"@type":"Place","name":"Brno"},
           "identifier":{"@type":"PropertyValue","propertyID":"IČO","value":"23686766"},"nonprofitStatus":"Nonprofit",
           "email":"kupava@kupavabrno.cz","telephone":"+420777072433",
           "address":{"@type":"PostalAddress","streetAddress":"Městečko 68","postalCode":"66461","addressLocality":"Rajhrad","addressCountry":"CZ"},
@@ -376,7 +410,7 @@ def page(lang):
            "primaryImageOfPage":BASE+"/img/soubor-portret.jpg"},
           {"@type":"FAQPage","inLanguage":INLANG,"mainEntity":[{"@type":"Question","name":q,"acceptedAnswer":{"@type":"Answer","text":a}} for q, a in faq_items(lang)]}] + events}
     x = X[lang]
-    nav = "".join(f'<a href="{h}">{e(n)}</a>' for h, n in t["nav"][:3]) + f'<a href="#aktuality">{e(x["nav_news"])}</a>' + "".join(f'<a href="{h}">{e(n)}</a>' for h, n in t["nav"][3:])
+    nav = "".join(f'<a href="{h}">{e(n)}</a>' for h, n in t["nav"][:3]) + (f'<a href="#aktuality">{e(x["nav_news"])}</a>' if NEWS_POSTS else "") + "".join(f'<a href="{h}">{e(n)}</a>' for h, n in t["nav"][3:])
     LBL = {"cs":"CZ","uk":"UA","en":"EN"}; CUR = ' aria-current="page"'
     langs = "".join('<a href="' + (pre + ("" if l=="cs" else l+"/") or "./") + f'" hreflang="{l}" lang="{l}"' + (CUR if l==lang else "") + f'>{LBL[l]}</a>' for l in LANGS)
     stats = "".join(f'<div><b>{e(a)}</b><span>{e(b)}</span></div>' for a, b in t["stats"])
@@ -397,8 +431,14 @@ def page(lang):
             ys = sorted({ev["date"][:4] for ev in evs})
             return (" a " if lang == "cs" else " і " if lang == "uk" else " and ").join(ys)
         return fdate(evs[0], lang)
-    cards = "".join(f'<article class="feat"><div class="feat-img">{pic(pre, "img/g/" + FEATURED_IMG[n], evs[0][lang])}</div><div class="feat-body"><time>{e(when(evs))}</time><h3>{e(evs[0][lang])}</h3><p>{e(evs[0]["place"][lang])}</p></div></article>' for n, evs in feat)
-    hl = "".join(f'<li><time>{e(when(evs))}</time><b>{e(evs[0][lang])}</b><span>{e(evs[0]["place"][lang])}</span></li>' for n, evs in rest)
+    def feat_more(evs):
+        po = next((post_for_event(ev) for ev in reversed(evs) if post_for_event(ev)), None)
+        return f'<a class="link" href="aktuality/{po["slug"]}/">{e(X[lang]["more"])} →</a>' if po else ""
+    def hl_name(evs):
+        po = next((post_for_event(ev) for ev in reversed(evs) if post_for_event(ev)), None)
+        return f'<a href="aktuality/{po["slug"]}/">{e(evs[0][lang])}</a>' if po else e(evs[0][lang])
+    cards = "".join(f'<article class="feat"><div class="feat-img">{pic(pre, "img/g/" + FEATURED_IMG[n], evs[0][lang])}</div><div class="feat-body"><time>{e(when(evs))}</time><h3>{e(evs[0][lang])}</h3><p>{e(evs[0]["place"][lang])}</p>{feat_more(evs)}</div></article>' for n, evs in feat)
+    hl = "".join(f'<li><time>{e(when(evs))}</time><b>{hl_name(evs)}</b><span>{e(evs[0]["place"][lang])}</span></li>' for n, evs in rest)
     up = ""
     if UPCOMING:
         def up_item(ev):
@@ -408,7 +448,9 @@ def page(lang):
             return f'<li class="up-item">{img}<div class="up-text"><time>{e(fdate(ev, lang))}</time><b>{e(ev[lang])}</b><span>{e(ev["place"][lang])}</span>{more}</div></li>'
         up = f'<div class="upcoming"><p class="kicker">{e(t["up_k"])}</p><ul>' + "".join(up_item(ev) for ev in UPCOMING) + '</ul></div>'
     vids = "".join(f'<div class="vid"><button class="yt" data-id="{vid}" aria-label="{e(title)}"><img src="https://i.ytimg.com/vi/{vid}/hqdefault.jpg" alt="" loading="lazy" width="480" height="360"></button><p><b lang="uk">{e(title)}</b><span>{e(sub[lang])}</span></p></div>' for vid, title, sub in VIDEOS)
-    gal = "".join(f'<a href="{pre}img/{s}.jpg">{pic(pre, "img/g/" + s, a[lang])}</a>' for s, a in GALLERY)
+    gal = "".join(f'<a href="{pre}img/{s}.jpg">{pic(pre, "img/g/" + s, a[lang], sizes="(max-width:1020px) 50vw, 400px")}</a>' for s, a in GALLERY)
+    _tvpo = next((p for p in POSTS if p["slug"].startswith("koncert-pro-zivot")), None)
+    tv_more = f'<p><a class="link light" href="aktuality/{_tvpo["slug"]}/">{e(x["more"])} →</a></p>' if _tvpo else ""
     f = t["f"]; l1, l2, l3 = t["con_labels"]
     return f'''<!doctype html>
 <html lang="{lang}">
@@ -483,6 +525,7 @@ def page(lang):
   <h2>{e(t["tv_h"])}</h2>
   <p>{e(t["tv_p"])}</p>
   <p class="tv-meta">{e(t["tv_meta"])}</p>
+  {tv_more}
  </div>
 </div></section>
 
@@ -507,7 +550,7 @@ def page(lang):
  </div>
 </div></section>
 
-{news_section(lang, pre)}
+{news_section(lang, pre) if NEWS_POSTS else ""}
 
 <section id="video" class="soft"><div class="wrap">
  <div class="sec-head"><div><p class="kicker">{e(t["vid_k"])}</p><h2>{e(t["vid_h"])}</h2></div><a class="link" href="https://www.youtube.com/watch?v=qvbnvvhpYXQ&amp;list=PLs8RLUolQE94t0YRGZ3u8ZIh3bfrB9ls5" target="_blank" rel="noopener">{e(t["vid_more"])} ↗</a></div>
@@ -515,14 +558,15 @@ def page(lang):
 </div></section>
 
 <section id="galerie"><div class="wrap">
- <p class="kicker">{e(t["gal_k"])}</p>
- <h2>{e(t["gal_h"])}</h2>
+ <h2>{e(t["gal_k"])}</h2>
  <div class="gallery">{gal}</div>
 </div></section>
 
 {press_section(lang, pre)}
 
 {faq_section(lang)}
+
+{support_section(lang, pre)}
 
 <section id="kontakt" class="contact"><div class="wrap contact-grid">
  <div>
@@ -560,7 +604,7 @@ def page(lang):
 
 {footer(lang, pre, langs)}
 
-<div class="lb" role="dialog" aria-modal="true" aria-label="{e(t["gal_h"])}"><button class="x" aria-label="×">×</button><button class="p" aria-label="‹">‹</button><img alt=""><button class="n" aria-label="›">›</button></div>
+<div class="lb" role="dialog" aria-modal="true" aria-label="{e(t["gal_k"])}"><button class="x" aria-label="×">×</button><button class="p" aria-label="‹">‹</button><img alt=""><button class="n" aria-label="›">›</button></div>
 <script src="{pre}assets/site.js?v={VER}"></script>
 </body>
 </html>
@@ -572,7 +616,7 @@ def fmt_post_date(d, lang):
 
 def news_section(lang, pre):
     x = X[lang]
-    cards = "".join(f'''<article class="news-card"><a href="aktuality/{po['slug']}/">{pic(pre, "img/g/" + po['image'], po[lang]['title'])}</a><div><time datetime="{po.get('event_date', po['date'])}">{e(fmt_post_date(po.get('event_date', po['date']), lang))}</time><h3><a href="aktuality/{po['slug']}/">{e(po[lang]['title'])}</a></h3><p>{e(po[lang]['perex'])}</p><a class="link" href="aktuality/{po['slug']}/">{e(x['more'])} →</a></div></article>''' for po in POSTS[:4])
+    cards = "".join(f'''<article class="news-card"><a href="aktuality/{po['slug']}/">{pic(pre, "img/g/" + po['image'], po[lang]['title'])}</a><div><time datetime="{po.get('event_date', po['date'])}">{e(fmt_post_date(po.get('event_date', po['date']), lang))}</time><h3><a href="aktuality/{po['slug']}/">{e(po[lang]['title'])}</a></h3><p>{e(po[lang]['perex'])}</p><a class="link" href="aktuality/{po['slug']}/">{e(x['more'])} →</a></div></article>''' for po in NEWS_POSTS[:4])
     return f'''<section id="aktuality"><div class="wrap">
  <p class="kicker">{e(x["news_k"])}</p>
  <h2>{e(x["news_h"])}</h2>
