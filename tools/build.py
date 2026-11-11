@@ -242,7 +242,7 @@ T = {
   foot_seat="Registered office: Městečko 68, 664 61 Rajhrad, Czech Republic", foot_reg="Reg. no. 23686766 · association registered at the Regional Court in Brno, L 31074",
 )}
 
-ORN = '<svg class="orn" viewBox="0 0 150 24" aria-hidden="true"><g fill="currentColor"><path d="M8 11.25h46v1.5H8zM96 11.25h46v1.5H96z"/><circle cx="62" cy="12" r="1.6"/><circle cx="88" cy="12" r="1.6"/><g transform="translate(45 0)"><path d="M33.05 13.26L35.88 16.49L40.16 16.21L37.33 12.98ZM31.26 15.05L30.98 19.33L34.21 22.16L34.49 17.88ZM28.74 15.05L25.51 17.88L25.79 22.16L29.02 19.33ZM26.95 13.26L22.67 12.98L19.84 16.21L24.12 16.49ZM26.95 10.74L24.12 7.51L19.84 7.79L22.67 11.02ZM28.74 8.95L29.02 4.67L25.79 1.84L25.51 6.12ZM31.26 8.95L34.49 6.12L34.21 1.84L30.98 4.67ZM33.05 10.74L37.33 11.02L40.16 7.79L35.88 7.51Z"/><circle cx="30" cy="12" r="1.6"/></g></g></svg>'
+ORN = '<svg class="orn" viewBox="0 0 240 44" aria-hidden="true"><g fill="currentColor"><path d="M8 21.3h72v1.4H8zM160 21.3h72v1.4h-72z"/><circle cx="90" cy="22" r="2.2"/><circle cx="150" cy="22" r="2.2"/><path d="M111.51 1.85L117.21 7.62L117.21 17.85L111.51 12.08ZM99.85 13.51L105.62 19.21L115.85 19.21L110.08 13.51ZM111.51 42.15L117.21 36.38L117.21 26.15L111.51 31.92ZM140.15 13.51L134.38 19.21L124.15 19.21L129.92 13.51ZM128.49 1.85L122.79 7.62L122.79 17.85L128.49 12.08ZM99.85 30.49L105.62 24.79L115.85 24.79L110.08 30.49ZM128.49 42.15L122.79 36.38L122.79 26.15L128.49 31.92ZM140.15 30.49L134.38 24.79L124.15 24.79L129.92 30.49Z"/><circle cx="120" cy="22" r="2.9"/></g></svg>'
 
 def page(lang):
     t = T[lang]; pre = "" if lang == "cs" else "../"
