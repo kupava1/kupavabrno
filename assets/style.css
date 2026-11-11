@@ -434,3 +434,10 @@ ul.hl li:last-child{border-bottom:0}
 @media (max-width:640px){.upcoming li.up-item{grid-template-columns:1fr}}
 /* rytmus mezer: střídání pozadí, menší okraje na mobilu */
 @media (max-width:640px){section{padding:56px 0}.tv,.contact{padding-top:96px}.stats-sec{padding:40px 0 16px}}
+/* menší ornament */
+.tv:before,.contact:before{top:24px;height:22px;-webkit-mask-size:26px 22px;mask-size:26px 22px}
+@media (max-width:640px){.tv:before,.contact:before{height:20px;-webkit-mask-size:23px 20px;mask-size:23px 20px}}
+.tv,.contact{padding-top:120px}
+@media (max-width:1020px){.tv,.contact{padding-top:100px}}
+@media (max-width:640px){.tv,.contact{padding-top:84px}}
+.kicker:before{width:11px;height:11px}
