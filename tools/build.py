@@ -111,22 +111,22 @@ GALLERY = [
 
 T = {
 "cs": dict(
-  title="Kupava – folklorní soubor a pěvecký sbor z Brna | lidové písně a koledy",
+  title="Kupava – ukrajinský folklorní soubor z Brna | lidové písně a koledy",
   h1_pre="Ukrajinský folklorní soubor",
-  desc="Folklorní soubor a pěvecký sbor Kupava z Brna – ukrajinské lidové písně a koledy ve vícehlasém zpěvu, lidová hudba a kroje. Adventní a vánoční koncerty, festivaly.",
+  desc="Ukrajinský folklorní soubor Kupava z Brna – lidové písně a koledy ve vícehlasém zpěvu, živá lidová hudba a kroje. Adventní a vánoční koncerty, festivaly.",
   brand_sub="ukrajinský folklorní soubor",
   nav=[("#o-nas","O nás"),("#repertoar","Repertoár"),("#vystoupeni","Vystoupení"),("#video","Video"),("#galerie","Galerie")],
   nav_cta="Kontakt",
   eyebrow="Ukrajinský folklorní soubor · Brno",
   lead="Tradiční vícehlasý zpěv a živá lidová hudba z různých regionů Ukrajiny.",
   cta1="Poslechnout si nás", cta2="Napište nám",
-  photo_alt="Folklorní soubor a pěvecký sbor Kupava v lidových krojích",
+  photo_alt="Ukrajinský folklorní soubor Kupava v lidových krojích",
   stats=[("2023","založení souboru"),(str(N_PAST),"vystoupení"),("10+","folklorních festivalů"),("3","země – Česko, Slovensko, Rakousko")],
   stages_k="Vystupovali jsme mimo jiné",
   stages=["MFF Strážnice","Smetanova Litomyšl","Chodské slavnosti","Jánošíkův dukát","TV Noe"],
   about_k="O nás", about_h="Píseň, která spojuje",
   about_p=[
-   "Ukrajinský folklorní soubor <b>Kupava</b> vznikl v únoru 2023 za podpory Ukrajinského centra v Brně. Jsme folklorní soubor i pěvecký sbor: věnujeme se tradičnímu ukrajinskému vícehlasému zpěvu a lidové hudbě z různých regionů Ukrajiny – zpíváme v originále, v krojích a za doprovodu živé hudby.",
+   "Ukrajinský folklorní soubor <b>Kupava</b> vznikl v únoru 2023 za podpory Ukrajinského centra v Brně. Věnujeme se tradičnímu ukrajinskému vícehlasému zpěvu a lidové hudbě z různých regionů Ukrajiny – zpíváme v originále, v krojích a za doprovodu živé hudby.",
    "Soubor tvoří Ukrajinky dlouhodobě žijící v Česku, ženy, které musely odejít z Ukrajiny po plnohodnotné ruské invazi v roce 2022, i Češi, kteří mají ukrajinský folklór rádi.",
    "Vystupujeme na folklorních festivalech, adventních a vánočních koncertech, v kostelích i na kulturních akcích měst a obcí."],
   director="Umělecká vedoucí", director_name="Mgr. Kateryna Mykhaylova",
@@ -157,9 +157,9 @@ T = {
   foot_seat="Sídlo: Městečko 68, 664 61 Rajhrad", foot_reg="IČO 23686766 · spolek zapsaný u Krajského soudu v Brně, L 31074",
 ),
 "uk": dict(
-  title="Купава – фольклорний ансамбль і хор з Брно | народні пісні й колядки",
+  title="Купава – український фольклорний ансамбль з Брно | народні пісні й колядки",
   h1_pre="Український фольклорний ансамбль",
-  desc="Фольклорний ансамбль і хор «Купава» з Брно (Чехія) – українські народні пісні й колядки в багатоголоссі, жива народна музика та строї. Різдвяні концерти й фестивалі.",
+  desc="Український фольклорний ансамбль «Купава» з Брно (Чехія) – народні пісні й колядки в багатоголоссі, жива народна музика та строї. Різдвяні концерти й фестивалі.",
   brand_sub="український фольклорний ансамбль",
   nav=[("#o-nas","Про нас"),("#repertoar","Репертуар"),("#vystoupeni","Виступи"),("#video","Відео"),("#galerie","Галерея")],
   nav_cta="Контакти",
@@ -172,7 +172,7 @@ T = {
   stages=["Фестиваль у Стражніце","Smetanova Litomyšl","Ходське свято","Яношиків дукат","TV Noe"],
   about_k="Про нас", about_h="Пісня, що єднає",
   about_p=[
-   "Український фольклорний ансамбль <b>«Купава»</b> заснований у лютому 2023 року за підтримки Українського центру в Брно. Ми – фольклорний ансамбль і водночас хор: займаємося традиційним українським багатоголосим співом і народною музикою з різних регіонів України – співаємо українською, у строях, під живу музику.",
+   "Український фольклорний ансамбль <b>«Купава»</b> заснований у лютому 2023 року за підтримки Українського центру в Брно. Ми займаємося традиційним українським багатоголосим співом і народною музикою з різних регіонів України – співаємо українською, у строях, під живу музику.",
    "В ансамблі співають українки, які давно живуть у Чехії, жінки, що були змушені покинути Україну після повномасштабного російського вторгнення 2022 року, а також чехи, які люблять український фольклор.",
    "Ми виступаємо на фольклорних фестивалях, адвентних і різдвяних концертах, у храмах і на культурних подіях міст і громад."],
   director="Художня керівниця", director_name="Mgr. Катерина Михайлова",
@@ -203,22 +203,22 @@ T = {
   foot_seat="Юридична адреса: Městečko 68, 664 61 Rajhrad", foot_reg="IČO 23686766 · громадське об’єднання, зареєстроване Крайовим судом у Брно, L 31074",
 ),
 "en": dict(
-  title="Kupava – Folk Ensemble & Choir from Brno | Folk Songs and Carols",
+  title="Kupava – Ukrainian Folk Ensemble from Brno | Folk Songs and Carols",
   h1_pre="Ukrainian folk ensemble",
-  desc="Kupava is a folk ensemble and choir from Brno, Czech Republic – Ukrainian folk songs and Christmas carols in polyphony, live folk music and traditional costume. Christmas concerts and festivals.",
+  desc="Kupava is a Ukrainian folk ensemble from Brno, Czech Republic – folk songs and Christmas carols in polyphony, live folk music and traditional costume. Christmas concerts and festivals.",
   brand_sub="Ukrainian folk ensemble",
   nav=[("#o-nas","About"),("#repertoar","Repertoire"),("#vystoupeni","Performances"),("#video","Video"),("#galerie","Gallery")],
   nav_cta="Contact",
   eyebrow="Ukrainian folk ensemble · Brno, Czech Republic",
   lead="Traditional Ukrainian polyphonic singing and live folk music from many regions of Ukraine.",
   cta1="Listen to us", cta2="Get in touch",
-  photo_alt="Kupava folk ensemble and choir in traditional costume",
+  photo_alt="Kupava Ukrainian folk ensemble in traditional costume",
   stats=[("2023","founded"),(str(N_PAST),"performances"),("10+","folklore festivals"),("3","countries – Czech Republic, Slovakia, Austria")],
   stages_k="We have performed at",
   stages=["Strážnice International Folklore Festival","Smetana’s Litomyšl","Chod Festival","Jánošík’s Ducat","TV Noe"],
   about_k="About us", about_h="Songs that connect",
   about_p=[
-   "The Ukrainian folk ensemble <b>Kupava</b> was founded in February 2023 in Brno, Czech Republic, with the support of the Ukrainian Centre in Brno. We are both a folk ensemble and a choir, dedicated to traditional Ukrainian polyphonic singing and folk music from many regions of Ukraine – sung in Ukrainian, in traditional costume and with live music.",
+   "The Ukrainian folk ensemble <b>Kupava</b> was founded in February 2023 in Brno, Czech Republic, with the support of the Ukrainian Centre in Brno. We are dedicated to traditional Ukrainian polyphonic singing and folk music from many regions of Ukraine – sung in Ukrainian, in traditional costume and with live music.",
    "The ensemble brings together Ukrainian women long settled in the Czech Republic, women who had to leave Ukraine after Russia’s full-scale invasion in 2022, and Czechs who love Ukrainian folklore.",
    "We perform at folklore festivals, Advent and Christmas concerts, in churches and at cultural events of towns and villages."],
   director="Artistic director", director_name="Kateryna Mykhaylova",
@@ -329,17 +329,17 @@ def footer(lang, pre, langs):
             f'<br><a class="cookie-link" href="{priv_href(lang, pre)}">{e(PRIV_LBL[lang])}</a></div>\n <div class="lang">{langs}</div>\n</div></footer>')
 
 
-# Časté otázky – odpovědi na to, co lidé hledají (ukrajinské Vánoce, koledy, kroj, písně, sbor). Slouží i pro AI vyhledávače (FAQPage).
+# Časté otázky – odpovědi na to, co lidé hledají (ukrajinské Vánoce, koledy, kroj, písně, nástroje). Slouží i pro AI vyhledávače (FAQPage).
 FAQ_HEAD = {"cs": ("Časté otázky", "Ukrajinský folklór a Kupava"), "uk": ("Часті запитання", "Український фольклор і «Купава»"), "en": ("FAQ", "Ukrainian folklore and Kupava")}
 def faq_items(lang):
     nxt = UPCOMING[0] if UPCOMING else None
     if lang == "cs":
         up = f" Nejbližší vystoupení: {nxt['cs']}, {fdate(nxt, 'cs')} ({nxt['place']['cs']})." if nxt else ""
         return [
-         ("Co je Kupava?", "Kupava je ukrajinský folklorní soubor a pěvecký sbor z Brna, založený v únoru 2023. Zpívá ukrajinské lidové písně a koledy v tradičním vícehlasu, v krojích a za doprovodu živé hudby. Umělecká vedoucí je Mgr. Kateryna Mykhaylova."),
-         ("Je v Brně ukrajinský sbor?", "Ano. Kupava je ukrajinský folklorní soubor a sbor, který působí v Brně a vystupuje v Česku, na Slovensku a v Rakousku. Soubor tvoří Ukrajinky žijící v Česku i Češi, kteří mají rádi ukrajinský folklór."),
+         ("Co je Kupava?", "Kupava je ukrajinský folklorní soubor z Brna, založený v únoru 2023. Zpívá ukrajinské lidové písně a koledy v tradičním vícehlasu, v krojích a za doprovodu živé hudby. Umělecká vedoucí je Mgr. Kateryna Mykhaylova."),
+         ("Je v Brně ukrajinský folklorní soubor?", "Ano. Kupava je ukrajinský folklorní soubor, který působí v Brně a vystupuje v Česku, na Slovensku a v Rakousku. Soubor tvoří Ukrajinky žijící v Česku i Češi, kteří mají rádi ukrajinský folklór."),
          ("Jaké ukrajinské písně Kupava zpívá?", "Lyrické, obřadní a taneční lidové písně z různých regionů Ukrajiny a vánoční koledy a ščedrivky – vždy v ukrajinštině a v tradičním vícehlasém podání. Například „Зеленеє жито, зелене“, „Ой, устану ранесенько“ nebo „Добрий вечір тобі, пане господарю“."),
-         ('Je Kupava folklorní soubor, nebo pěvecký sbor?', 'Obojí. Jako pěvecký sbor zpívá Kupava ve vícehlasu – sborový zpěv je základem každého vystoupení. Jako folklorní soubor uvádí lidové písně v krojích a za doprovodu živé lidové hudby: housle, akordeon, kontrabas, bandura a cimbál.'),
+         ('Na jaké nástroje Kupava hraje?', 'Vícehlasý zpěv souboru doprovází živá lidová hudba: housle, viola, akordeon, kontrabas, bandura, cimbál a sopilka (ukrajinská lidová flétna).'),
          ('Co je vícehlasý zpěv?', 'Vícehlasý zpěv znamená, že píseň zní v několika hlasech zároveň. V ukrajinské lidové tradici melodii často nesou spodní hlasy a nad nimi zní vysoký horní hlas – pidholosok. Takto zpívá Kupava lidové písně i koledy.'),
          ('Vystupuje Kupava na adventních a vánočních koncertech?', 'Ano. V adventu a o Vánocích uvádí program Staroukrajinské Vánoce s koledami a ščedrivkami – v posledních letech v kostele sv. Josefa v Brně, u Jošta na Moravském náměstí a ve Vídni.'),
          ("Kde můžu Kupavu slyšet živě?", "Na folklorních festivalech (např. MFF Strážnice, Chodské slavnosti), na festivalu Smetanova Litomyšl, na koncertech a vánočních programech v Brně i ve Vídni." + up + " Ukázky najdete na YouTube."),
@@ -351,10 +351,10 @@ def faq_items(lang):
     if lang == "uk":
         up = f" Найближчий виступ: {nxt['uk']}, {fdate(nxt, 'uk')} ({nxt['place']['uk']})." if nxt else ""
         return [
-         ("Що таке «Купава»?", "«Купава» – український фольклорний ансамбль і хор з Брно (Чехія), заснований у лютому 2023 року. Ансамбль виконує українські народні пісні та колядки в традиційному багатоголоссі, у народних строях і під живу музику. Художня керівниця – Mgr. Катерина Михайлова."),
-         ("Чи є в Брно український хор?", "Так. «Купава» – український фольклорний ансамбль і хор, що діє в Брно та виступає в Чехії, Словаччині та Австрії. В ансамблі співають українки, які живуть у Чехії, а також чехи, які люблять український фольклор."),
+         ("Що таке «Купава»?", "«Купава» – український фольклорний ансамбль з Брно (Чехія), заснований у лютому 2023 року. Ансамбль виконує українські народні пісні та колядки в традиційному багатоголоссі, у народних строях і під живу музику. Художня керівниця – Mgr. Катерина Михайлова."),
+         ("Чи є в Брно український фольклорний ансамбль?", "Так. «Купава» – український фольклорний ансамбль, що діє в Брно та виступає в Чехії, Словаччині та Австрії. В ансамблі співають українки, які живуть у Чехії, а також чехи, які люблять український фольклор."),
          ("Які українські пісні співає «Купава»?", "Ліричні, обрядові й танцювальні народні пісні з різних регіонів України, а також колядки й щедрівки – українською мовою, у традиційному багатоголоссі. Наприклад, «Зеленеє жито, зелене», «Ой, устану ранесенько», «Добрий вечір тобі, пане господарю»."),
-         ('«Купава» – це фольклорний ансамбль чи хор?', 'І те, і те. Як хор «Купава» співає багатоголосо – хоровий спів є основою кожного виступу. Як фольклорний ансамбль виконує народні пісні в строях і під живу народну музику: скрипка, акордеон, контрабас, бандура й цимбали.'),
+         ('На яких інструментах грає «Купава»?', 'Багатоголосий спів ансамблю супроводжує жива народна музика: скрипка, альт, акордеон, контрабас, бандура, цимбали й сопілка.'),
          ('Що таке багатоголосий спів?', 'Багатоголосий спів означає, що пісня звучить кількома голосами одночасно. В українській народній традиції мелодію часто ведуть нижні голоси, а над ними звучить високий верхній голос – підголосок. Саме так «Купава» співає народні пісні й колядки.'),
          ('Чи виступає «Купава» на адвентних і різдвяних концертах?', 'Так. Під час адвенту й на Різдво ансамбль представляє програму «Староукраїнське Різдво» з колядками й щедрівками – останніми роками в храмі св. Йосифа в Брно, біля Йошта на Моравській площі та у Відні.'),
          ("Де можна почути «Купаву» наживо?", "На фольклорних фестивалях (зокрема в Стражніце та на Ходському святі), на фестивалі Smetanova Litomyšl, на концертах і різдвяних програмах у Брно та Відні." + up + " Записи є на YouTube."),
@@ -365,10 +365,10 @@ def faq_items(lang):
         ]
     up = f" Next performance: {nxt['en']}, {fdate(nxt, 'en')} ({nxt['place']['en']})." if nxt else ""
     return [
-     ("What is Kupava?", "Kupava is a Ukrainian folk ensemble and choir from Brno, Czech Republic, founded in February 2023. It performs Ukrainian folk songs and Christmas carols in traditional polyphony, in traditional costume and with live music. Artistic director: Kateryna Mykhaylova."),
-     ("Is there a Ukrainian choir in Brno?", "Yes. Kupava is a Ukrainian folk ensemble and choir based in Brno that performs in the Czech Republic, Slovakia and Austria. It brings together Ukrainian women living in the Czech Republic and Czechs who love Ukrainian folklore."),
+     ("What is Kupava?", "Kupava is a Ukrainian folk ensemble from Brno, Czech Republic, founded in February 2023. It performs Ukrainian folk songs and Christmas carols in traditional polyphony, in traditional costume and with live music. Artistic director: Kateryna Mykhaylova."),
+     ("Is there a Ukrainian folk ensemble in Brno?", "Yes. Kupava is a Ukrainian folk ensemble based in Brno that performs in the Czech Republic, Slovakia and Austria. It brings together Ukrainian women living in the Czech Republic and Czechs who love Ukrainian folklore."),
      ("What Ukrainian songs does Kupava sing?", "Lyrical, ritual and dance folk songs from many regions of Ukraine, as well as Christmas carols (koliadky) and New Year songs (shchedrivky) – always in Ukrainian and in traditional polyphony, e.g. “Zeleneie zhyto, zelene” or “Dobryi vechir tobi, pane hospodariu”."),
-     ('Is Kupava a folk ensemble or a choir?', 'Both. As a choir, Kupava sings in polyphony – choral singing is the heart of every performance. As a folk ensemble, it presents folk songs in traditional costume with live folk music: violin, accordion, double bass, bandura and cimbalom.'),
+     ('What instruments does Kupava play?', 'The ensemble’s polyphonic singing is accompanied by live folk music: violin, viola, accordion, double bass, bandura, cimbalom and sopilka (Ukrainian folk flute).'),
      ('What is polyphonic singing?', 'Polyphonic singing means a song is sung in several voices at once. In Ukrainian folk tradition the lower voices often carry the melody while a high upper voice – the pidholosok – soars above them. This is how Kupava sings folk songs and carols.'),
      ('Does Kupava perform at Advent and Christmas concerts?', 'Yes. During Advent and at Christmas the ensemble presents its programme Old Ukrainian Christmas with carols and shchedrivky – in recent years at St Joseph’s Church in Brno, by the Jošt statue on Moravské náměstí and in Vienna.'),
      ("Where can I hear Kupava live?", "At folklore festivals (e.g. the Strážnice International Folklore Festival and the Chod Festival), at Smetana’s Litomyšl, and at concerts and Christmas programmes in Brno and Vienna." + up + " Recordings are on YouTube."),
@@ -390,9 +390,9 @@ def page(lang):
     alts = "\n".join(f'<link rel="alternate" hreflang="{l}" href="{BASE}{p}">' for l, p in LANGS.items())
     SAME = ["https://www.facebook.com/KupavaBrno","https://www.instagram.com/soubor_kupava/","https://www.youtube.com/playlist?list=PLs8RLUolQE94t0YRGZ3u8ZIh3bfrB9ls5"]
     INLANG = {"cs":"cs-CZ","uk":"uk-UA","en":"en"}[lang]
-    group = {"@type":["MusicGroup","PerformingGroup"],"@id":BASE+"/#kupava","name":"Kupava","alternateName":["Купава","Kupava Brno","Ukrajinský folklorní soubor Kupava","Ukrajinský sbor Kupava","Ансамбль «Купава»","Український хор «Купава»","Kupava Ukrainian Choir"],
+    group = {"@type":["MusicGroup","PerformingGroup"],"@id":BASE+"/#kupava","name":"Kupava","alternateName":["Купава","Kupava Brno","Ukrajinský folklorní soubor Kupava","Ансамбль «Купава»","Український фольклорний ансамбль «Купава»","Kupava Ukrainian Folk Ensemble"],
           "legalName":"Ukrajinský folklorní soubor KUPAVA, z.s.","description":t["desc"],"url":BASE+"/","logo":BASE+"/img/logo.png","image":BASE+"/img/soubor-portret.jpg",
-          "genre":["Folk music","Ukrainian folk music","Choral music","Polyphonic singing","Christmas carols","World music"],"knowsAbout":["Folk songs","Folklore","Choral singing","Polyphonic singing","Christmas carols","Traditional costume","Ukrainian Christmas traditions"],"foundingDate":"2023-02","funder":[{"@type":"GovernmentOrganization","name":"Jihomoravský kraj","url":"https://www.jmk.cz/"}],"sponsor":[{"@type":"Organization","name":"Ukrajinská iniciativa Jižní Moravy, z. s.","url":"https://www.ukrijm.cz/"}],"foundingLocation":{"@type":"Place","name":"Brno"},
+          "genre":["Folk music","Ukrainian folk music","Polyphonic singing","Christmas carols","World music"],"knowsAbout":["Folk songs","Folklore","Folk music","Polyphonic singing","Christmas carols","Traditional costume","Ukrainian Christmas traditions"],"foundingDate":"2023-02","funder":[{"@type":"GovernmentOrganization","name":"Jihomoravský kraj","url":"https://www.jmk.cz/"}],"sponsor":[{"@type":"Organization","name":"Ukrajinská iniciativa Jižní Moravy, z. s.","url":"https://www.ukrijm.cz/"}],"foundingLocation":{"@type":"Place","name":"Brno"},
           "identifier":{"@type":"PropertyValue","propertyID":"IČO","value":"23686766"},"nonprofitStatus":"Nonprofit",
           "email":"kupava@kupavabrno.cz","telephone":"+420777072433",
           "address":{"@type":"PostalAddress","streetAddress":"Městečko 68","postalCode":"66461","addressLocality":"Rajhrad","addressCountry":"CZ"},
@@ -911,12 +911,13 @@ open(os.path.join(OUT, "robots.txt"), "w").write("User-agent: *\nAllow: /\n\n# A
 hl_lines = "\n".join(f"- {ev['date'][:4]}: {ev['en']} ({ev['place']['en']})" for ev in HIGHLIGHTS)
 up_lines = "\n".join(f"- {ev['date']}: {ev['en']} ({ev['place']['en']})" for ev in UPCOMING) or "- (none announced)"
 faq_md = "\n".join(f"### {q}\n{a}\n" for q, a in faq_items("en"))
-llms = f"""# Kupava – Ukrainian folk ensemble and choir from Brno (Czech Republic)
+llms = f"""# Kupava – Ukrainian folk ensemble from Brno (Czech Republic)
 
-> Kupava (Купава; Ukrajinský folklorní soubor KUPAVA, z.s.) is a Ukrainian folk ensemble and choir based in Brno, Czech Republic, founded in February 2023. It performs traditional Ukrainian polyphonic singing – folk songs from many regions of Ukraine, Christmas carols (koliadky) and New Year songs (shchedrivky) – in traditional costume and with live music. Artistic director: Kateryna Mykhaylova. Website in Czech, Ukrainian and English.
+> Kupava (Купава; Ukrajinský folklorní soubor KUPAVA, z.s.) is a Ukrainian folk ensemble based in Brno, Czech Republic, founded in February 2023. It performs traditional Ukrainian polyphonic singing – folk songs from many regions of Ukraine, Christmas carols (koliadky) and New Year songs (shchedrivky) – in traditional costume and with live music. Artistic director: Kateryna Mykhaylova. Website in Czech, Ukrainian and English.
 
 ## Key facts
-- Type: Ukrainian folk ensemble / folk choir (Czech: ukrajinský folklorní soubor, pěvecký sbor; Ukrainian: український фольклорний ансамбль, хор)
+- Type: Ukrainian folk ensemble (Czech: ukrajinský folklorní soubor; Ukrainian: український фольклорний ансамбль) – a folk ensemble, not a choir
+- Live music: violin, viola, accordion, double bass, bandura, cimbalom, sopilka
 - Based in: Brno, Czech Republic (registered office Rajhrad), non-profit association, Reg. no. 23686766
 - Founded: February 2023, with the support of the Ukrainian Centre in Brno
 - Performances: {N_PAST} since 2023 in the Czech Republic, Slovakia and Austria, incl. the Strážnice International Folklore Festival, Smetana’s Litomyšl, the Chod Festival, Jánošík’s Ducat and a live TV Noe broadcast (Concert for Life II, 2025)
